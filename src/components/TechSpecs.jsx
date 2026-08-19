@@ -38,7 +38,7 @@ const TECH_PILLARS = [
 
 export default function TechSpecs() {
   return (
-    <section id="tech" className="py-24 bg-[#07090e] relative border-t border-slate-800">
+    <section id="tech" className="py-10 sm:py-16 md:py-20 bg-[#07090e] relative border-t border-slate-800">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
