@@ -5,33 +5,33 @@ export default function Hero({ onOpenRfp, onSelectDrone }) {
   const [activeTab, setActiveTab] = useState('stealth');
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center tactical-grid">
+    <section className="relative min-h-[90vh] pt-28 sm:pt-36 md:pt-40 pb-12 sm:pb-20 overflow-hidden flex items-center tactical-grid">
       
       {/* Background Radial Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute top-1/3 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Headlines & Telemetry */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             
             {/* Classification & Status Badge */}
-            <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded bg-cyan-950/60 border border-cyan-500/40 text-cyan-400 font-mono text-xs tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded bg-cyan-950/60 border border-cyan-500/40 text-cyan-400 font-mono text-[10px] sm:text-xs tracking-wider uppercase flex-wrap">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
               <span>CLASSIFIED DEFENSE TECHNOLOGY</span>
-              <span className="text-slate-600">|</span>
+              <span className="text-slate-600 hidden sm:inline">|</span>
               <span className="text-slate-300">MILITARY SPECIFICATION UAV</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-orbitron font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1]">
+            <h1 className="font-orbitron font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15]">
               TACTICAL <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-amber-400 text-glow-cyan">AUTONOMOUS</span> DEFENSE UAVs
             </h1>
 
             {/* Subtext */}
-            <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-sans">
+            <p className="text-slate-300 text-sm sm:text-base lg:text-lg max-w-2xl leading-relaxed font-sans">
               Safshikan engineers state-of-the-art stealth reconnaissance, precision tactical strike UAVs, and vertical takeoff aerospace platforms. Integrated with our proprietary <strong className="text-cyan-400 font-mono">AGRON Defense OS</strong> for real-time AI target tracking and secure swarm command.
             </p>
 

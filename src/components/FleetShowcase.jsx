@@ -111,7 +111,7 @@ export default function FleetShowcase({ onOpenRfp }) {
     : DEFENSE_FLEET.filter(drone => drone.category === activeCategory);
 
   return (
-    <section id="fleet" className="py-24 bg-[#07090e] relative border-t border-slate-800/80">
+    <section id="fleet" className="py-10 sm:py-16 md:py-20 bg-[#07090e] relative border-t border-slate-800/80">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

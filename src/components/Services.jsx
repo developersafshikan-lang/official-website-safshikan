@@ -76,7 +76,7 @@ const SAFSHIKAN_SERVICES = [
 
 export default function Services({ onOpenRfp }) {
   return (
-    <section id="services" className="py-24 bg-[#03060c] border-t border-blue-900/50 relative overflow-hidden">
+    <section id="services" className="py-10 sm:py-16 md:py-20 bg-[#03060c] border-t border-blue-900/50 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-600/10 blur-[140px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
