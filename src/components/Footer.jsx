@@ -38,7 +38,7 @@ export default function Footer({ onOpenRfp }) {
                 <div className="flex items-center gap-3">
                   {/* Instagram */}
                   <a 
-                    href="https://instagram.com/safshikan" 
+                    href="https://www.instagram.com/_safshikan" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
@@ -51,7 +51,7 @@ export default function Footer({ onOpenRfp }) {
 
                   {/* Facebook */}
                   <a 
-                    href="https://facebook.com/safshikan" 
+                    href="https://www.facebook.com/share/1EvyGE1gfM/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
@@ -64,7 +64,7 @@ export default function Footer({ onOpenRfp }) {
 
                   {/* TikTok */}
                   <a 
-                    href="https://tiktok.com/@safshikan" 
+                    href="https://www.tiktok.com/@_safshikan" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
@@ -77,7 +77,7 @@ export default function Footer({ onOpenRfp }) {
 
                   {/* LinkedIn */}
                   <a 
-                    href="https://linkedin.com/company/safshikan" 
+                    href="https://www.linkedin.com/company/safshikan/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
