@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safshikan Aerospace & UAV Solutions | Official Product Catalog</title>
+  <meta name="description" content="Safshikan Aerospace & UAV Solutions - Official product portfolio featuring Grim Reaper UAS, BVLOS, Sentinel Vigilance Pro, Edith Sovran Series, FPV Platforms, and AGRON Agriculture Spray Drones." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- React & React DOM CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  
+  <!-- Babel CDN for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#050914',
+              navy: '#0b1326',
+              card: '#0f1c36',
+              cardBorder: '#1c2d52',
+              blue: '#0077ff',
+              cyan: '#00e5ff',
+              lightBlue: '#38bdf8',
+              amber: '#ffaa00',
+              emerald: '#10b981',
+              red: '#ff3344',
+              slate: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            rajdhani: ['Rajdhani', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050914;
+      color: #f1f5f9;
+    }
+
+    .tactical-grid-blue {
+      background-image: 
+        linear-gradient(to right, rgba(0, 119, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 119, 255, 0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    .glow-blue {
+      box-shadow: 0 0 30px rgba(0, 119, 255, 0.35);
+    }
+
+    .text-glow-blue {
+      text-shadow: 0 0 16px rgba(0, 163, 255, 0.8);
+    }
+
+    .tactical-card-blue {
+      background: rgba(15, 28, 54, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(0, 163, 255, 0.25);
+      position: relative;
+    }
+
+    .tactical-card-blue::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 10px;
+      height: 10px;
+      border-top: 2.5px solid #00e5ff;
+      border-left: 2.5px solid #00e5ff;
+    }
+
+    .tactical-card-blue::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 10px;
+      height: 10px;
+      border-bottom: 2.5px solid #0077ff;
+      border-right: 2.5px solid #0077ff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050914;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1c2d52;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00e5ff;
+    }
+  </style>
+</head>
+<body class="bg-[#050914] text-slate-100 font-sans selection:bg-sky-500 selection:text-black overflow-x-hidden">
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // Official Safshikan Products Dataset
+    const OFFICIAL_SAFSHIKAN_PRODUCTS = [
+      {
+        id: 'grim-reaper',
+        name: 'The Grim Reaper UAS',
+        sector: 'Defense & Armed Reconnaissance',
+        category: 'Military-Grade Tactical UAS',
+        tagline: 'High-Endurance Tactical UAS with 6x 60mm Mortar Modular Rack',
+        image: './assets/grim_reaper_optimized.jpg',
+        description: 'Military-grade tactical UAS built for high-endurance missions and precision kinetic delivery. Features a custom modular rack for independent delivery of six 60mm mortars, centimeter-level RTK positioning, dual-sensor Thermal/Visible payload, and 4G C2 datalink.',
+        specs: {
+          payload: 'Custom Rack for 6x 60mm Mortars',
+          range: '20 km Operational Radius',
+          endurance: 'Up to 40 mins (no load) / 25 mins (full load)',
+          positioning: 'Centimeter-Level RTK Positioning',
+          sensors: 'Integrated Dual-Sensor Thermal & Visible Pod',
+          comms: '4G Modules for Telemetry & C2 Links'
+        },
+        features: [
+          'Modular independent release rack for six 60mm mortars',
+          '20km operational communication radius',
+          'Centimeter-level precision utilizing RTK positioning',
+          'Integrated 4G telemetry and command-and-control links'
+        ]
+      },
+      {
+        id: 'bvlos-network',
+        name: 'BVLOS: High Payload Delivery',
+        sector: 'Defense & Armed Reconnaissance',
+        category: 'Heavy-Lift Tactical UAS',
+        tagline: 'High-Capacity Heavy-Lift Tactical UAS for BVLOS Operations',
+        image: './assets/bvlos_catalog_actual_optimized.jpg',
+        description: 'High-capacity, heavy-lift tactical UAS engineered for Beyond Visual Line of Sight (BVLOS) long-range logistics and mission-critical delivery. Utilizes a network-centric 4G architecture to ensure secure, global command and control up to 25km radius with a 16kg payload.',
+        specs: {
+          payload: '16 kg Maximum Heavy-Lift Payload',
+          range: '25 km Operational Reach',
+          endurance: 'Up to 45 mins (no load) / 30 mins (full load)',
+          datalink: 'Integrated 4G Module Network-Centric Datalink',
+          mode: 'Engineered for BVLOS Tactical Delivery'
+        },
+        features: [
+          'Structural upgrades supporting maximum 16kg heavy-lift payload',
+          '25km operational long-range reach for BVLOS missions',
+          'Sustained flight operations up to 30 mins with full load (45 mins without)',
+          'Integrated 4G modules for global command and telemetry datalink'
+        ]
+      },
+      {
+        id: 'sentinel-vigilance',
+        name: 'Sentinel Vigilance Pro',
+        sector: 'Defense & Armed Reconnaissance',
+        category: 'Police-Grade Security Drone',
+        tagline: 'Advanced Security & Night Surveillance with Megaphone',
+        image: './assets/sentinel_catalog_optimized.jpg',
+        description: 'Police-grade security drone specifically designed for surveillance, night operations, and emergency communication. Features multi-sensor camera with 640x480 thermal zoom and a high-output megaphone built into a rugged all-weather carbon fiber airframe.',
+        specs: {
+          payload: '5 kg Maximum Payload Capacity',
+          range: '30 km Operational Reach',
+          endurance: 'Up to 60 mins (no load) / 45 mins (full load)',
+          sensors: 'Multi-Sensor Camera (Thermal Zoom) & Megaphone',
+          datalink: 'Integrated 4G Module Global Telemetry'
+        },
+        features: [
+          'Rugged all-weather carbon fiber security airframe',
+          'Integrated multi-sensor thermal zoom optics & high-output megaphone',
+          '30km operational long-range mission radius',
+          'Sustained flight endurance up to 60 minutes (45 mins with payload)'
+        ]
+      },
+      {
+        id: 'sovraan-1',
+        name: 'Edith Sovran-I',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '10-Inch Tactical Delivery UAS',
+        tagline: 'Short-Range 10-Inch UAS for Single 60mm Mortar Delivery',
+        image: './assets/sovraan_1_catalog_optimized.jpg',
+        description: 'Versatile 10-inch tactical UAS designed for precise short-range delivery operations. Engineered for transporting specialized single 60mm mortar payloads across challenging operational environments.',
+        specs: {
+          platform: '10-Inch Tactical Delivery UAS',
+          payload: '1.5 kg Payload (Single 60mm Mortar)',
+          range: '5 km Mission Radius',
+          endurance: 'Up to 25 mins (no load) / 12.5 mins (full load)',
+          loadout: 'Configured for Single 60mm Mortar'
+        },
+        features: [
+          '10-inch heavy carbon fiber tactical frame',
+          'Optimized for 1.5kg payload (single 60mm mortar delivery)',
+          '5km operational mission radius',
+          '12.5 minutes sustained flight carrying full 60mm payload'
+        ]
+      },
+      {
+        id: 'sovraan-2',
+        name: 'Edith Sovran-II',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '10-Inch Dual Grenade Delivery UAS',
+        tagline: 'Tactical UAS for Simultaneous Delivery of 2x 750g Grenades',
+        image: './assets/sovraan_2_catalog_optimized.jpg',
+        description: 'Specialized 10-inch tactical UAS designed for dual-payload delivery operations. Features an integrated dual-sensor system (640x480 thermal and 2K visible camera) for simultaneous transport of two 750g grenades.',
+        specs: {
+          platform: '10-Inch Tactical Delivery UAS',
+          payload: '1.5 kg Total Payload (2x 750g Grenades)',
+          sensors: 'Integrated Dual-Sensor (640x480 Thermal & 2K Visible)',
+          range: '5 km Mission Radius',
+          endurance: 'Up to 25 mins (no load) / 12.5 mins (full load)'
+        },
+        features: [
+          'Dual grenade release system (2x 750g grenades)',
+          'Integrated dual-sensor optics: 640x480 thermal & 2K visible light',
+          '5km mission engagement radius',
+          '12.5 mins flight window under full tactical payload'
+        ]
+      },
+      {
+        id: 'sovraan-3',
+        name: 'Edith Sovran-III',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '10-Inch Reconnaissance & EW Anti-Jamming',
+        tagline: 'Tactical ISR UAS with 22x Zoom, Thermal Optics & EW Anti-Jamming',
+        image: './assets/sovraan_3_catalog_optimized.jpg',
+        description: 'Specialized 10-inch tactical UAS designed for tactical level reconnaissance and night operations. Equipped with Thermal & Visible camera with 22x extended zoom and hardware anti-jamming module to monitor targets undetected.',
+        specs: {
+          platform: '10-Inch Tactical Reconnaissance UAS',
+          sensors: 'Thermal & Visible Camera (22x Extended Zoom)',
+          antiJamming: 'Integrated Hardware Anti-Jamming Module',
+          payload: 'Optional Servo Payload Release Mechanism',
+          range: '5 km Mission Radius',
+          endurance: 'Up to 25 minutes Flight Time'
+        },
+        features: [
+          '22x extended zoom with thermal and 2K visible optics',
+          'Integrated electronic warfare anti-jamming module',
+          'Optional servo-actuated payload drop mechanism',
+          'Undetected night operations and tactical ISR loiter'
+        ]
+      },
+      {
+        id: '7inch-digital',
+        name: '7-Inch Long Range Digital FPV UAV',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '7-Inch Digital FPV Platform',
+        tagline: 'High-Agility Digital FPV UAV with 4K HD Feed',
+        image: './assets/7inch_digital_catalog_optimized.jpg',
+        description: 'High-agility tactical kamikaze platform engineered for precision one-way missions. Optimized for low-latency 4K digital video feedback and high maneuverability carrying a 750g tactical payload.',
+        specs: {
+          platform: '7-Inch FPV Digital UAV',
+          transmission: '4K High-Definition Digital Video Feed',
+          payload: '750g Tactical Payload',
+          range: '2 km+ Mission Radius',
+          endurance: 'Up to 25 mins (no load) / 15 mins (full load)'
+        },
+        features: [
+          '4K high-definition digital video feed for enhanced situational awareness',
+          '750g tactical payload capacity for targeted delivery',
+          '2km+ extended operational mission radius',
+          '15 minutes sustained flight time with full 750g load'
+        ]
+      },
+      {
+        id: '7inch-analog',
+        name: '7-Inch Long Range Analog FPV UAV',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '7-Inch Analog FPV Platform',
+        tagline: 'Zero-Latency Analog FPV UAV with Foxeer & Patch Antenna',
+        image: './assets/7inch_analog_catalog_optimized.jpg',
+        description: 'Specialized tactical kamikaze platform designed for rapid deployment and high-agility maneuvers. Optimized for zero-latency feedback via an analog link, Foxeer antenna, and high-gain patch antenna.',
+        specs: {
+          platform: '7-Inch FPV Analog UAV',
+          transmission: 'Low-Latency Analog Video Feed',
+          antenna: 'Foxeer Antenna & High-Gain Patch Antenna',
+          payload: '750g Tactical Payload',
+          range: '2 km+ Mission Radius',
+          endurance: 'Up to 25 mins (no load) / 15 mins (full load)'
+        },
+        features: [
+          'Zero-latency analog video link for screen-based display output',
+          'Foxeer antenna & high-gain patch antenna for RF signal penetration',
+          '750g tactical payload carrying capacity',
+          '15 minutes flight endurance under full payload'
+        ]
+      },
+      {
+        id: '5inch-digital',
+        name: '5-Inch Long Range Digital FPV UAV',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '5-Inch Digital FPV Platform',
+        tagline: 'Compact Tactical Interceptor with Digital DJI Video System',
+        image: './assets/5inch_digital_catalog_optimized.jpg',
+        description: 'Compact, high-velocity tactical interceptor designed for surgical precision in short-range operations. Leverages an integrated Digital DJI Video system for unmatched visual clarity carrying a 300g precision payload.',
+        specs: {
+          platform: '5-Inch FPV Digital UAV',
+          transmission: 'Integrated Digital DJI Video System',
+          payload: '300g Precision Payload',
+          range: '2 km Operational Distance',
+          endurance: 'Sustained Window up to 25 Minutes'
+        },
+        features: [
+          'Integrated Digital DJI Video system for high-fidelity awareness',
+          'Tailored for 300g precision payload delivery',
+          'Compact, unobtrusive profile for restricted environments',
+          '25 minutes operational flight window'
+        ]
+      },
+      {
+        id: '5inch-analog',
+        name: '5-Inch Long Range Analog FPV UAV',
+        sector: 'Defense & Armed Reconnaissance',
+        category: '5-Inch Analog FPV Platform',
+        tagline: 'Ultra-Responsive FPV UAV with Zero-Latency Analog Feed',
+        image: './assets/5inch_analog_catalog_optimized.jpg',
+        description: 'Ultra-responsive, small-form tactical asset engineered for rapid engagement in restricted environments. Prioritizes a high power-to-weight ratio and robust analog interface carrying a 300g payload.',
+        specs: {
+          platform: '5-Inch FPV Analog UAV',
+          transmission: 'Integrated Analog Video System (Zero-Latency)',
+          antenna: 'Foxeer Antenna & High-Gain Patch Antenna',
+          payload: '300g Tactical Payload',
+          range: '2 km Operational Distance',
+          endurance: 'Sustained Window up to 25 Minutes'
+        },
+        features: [
+          'Zero-latency analog video feed for screen-based output',
+          'Foxeer & high-gain patch antenna system',
+          'High-discharge battery system for explosive maneuverability',
+          '25 minutes sustained operational window'
+        ]
+      },
+      {
+        id: 'agron-10l',
+        name: 'AGRON 10L Agriculture Spray Drone',
+        sector: 'Agriculture & Civil Solutions',
+        category: 'Precision Agriculture Sprayer',
+        tagline: 'Efficient Aerial Spraying Solution (96 Acres / Day)',
+        image: './assets/agron_10l_catalog_optimized.jpg',
+        description: 'High-efficiency aerial spraying platform designed for plain field crops. Features 10-liter spray tank, 4-axis sprinklers (up to 5L/min flow), 5km dual-frequency link, and front/back/down terrain-following radar.',
+        specs: {
+          payload: '10 Liters Spray Tank',
+          coverage: '96 Acres / Day (4 Acres / Flight | 12 Acres / Hour)',
+          flowRate: 'Max 5 L/min (4 Sprinklers)',
+          range: '5 km Dual Frequency Transmission',
+          swath: '6 Meters Swath Width (3 Battery Stager Ops)',
+          avoidance: 'Front, Back & Down Terrain-Following Radar'
+        },
+        features: [
+          'Replaces hazardous manual pesticide spraying on field crops',
+          '96 acres per day coverage capacity (4 acres per flight)',
+          'Automated terrain-following radar for uneven fields',
+          '3-battery stager continuous operation setup'
+        ]
+      },
+      {
+        id: 'agron-30l',
+        name: 'AGRON 30L Agriculture Spray Drone',
+        sector: 'Agriculture & Civil Solutions',
+        category: 'Commercial Farm & Orchard Heavy Sprayer',
+        tagline: 'Heavy-Lift Agricultural System (336 Acres / Day)',
+        image: './assets/agron_30l_catalog_optimized.jpg',
+        description: 'Commercial-grade heavy agricultural drone with 30L spray tank and 50L spreading tank. Engineered for large farms and orchards with dual centrifugal sprinklers delivering up to 16L/min.',
+        specs: {
+          payload: '30L Spray Tank | 50L Spreading Tank',
+          coverage: '336 Acres / Day (7 Acres / Flight | 42 Acres / Hour)',
+          flowRate: 'Max 16 L/min (2 Centrifugal Sprinklers)',
+          range: '5 km Dual Frequency Transmission',
+          swath: '6 Meters Swath Width (3 Battery Stager Ops)',
+          avoidance: 'Front, Back & Down Terrain-Following Radar'
+        },
+        features: [
+          'Dual capability: 30L liquid spray & 50L granular spreading tank',
+          'Dual centrifugal atomizing sprinklers for drift control',
+          'High daily coverage of 336 acres per day (7 acres per flight)',
+          '42 acres per hour operational efficiency'
+        ]
+      },
+      {
+        id: 'agron-50l',
+        name: 'AGRON 50L Agriculture Spray Drone',
+        sector: 'Agriculture & Civil Solutions',
+        category: 'Ultra Heavy-Lift Sprayer & Spreader',
+        tagline: 'Ultra Heavy-Lift Agricultural System (336+ Acres / Day)',
+        image: './assets/agron_30l_catalog_optimized.jpg',
+        description: 'Commercial-grade ultra heavy agricultural drone with 50L capacity (spray & granular spreading). Engineered for vast farm acreage with high-velocity atomizing sprinklers delivering up to 16L/min.',
+        specs: {
+          payload: '50L Tank (Liquid Spray & Granular Spreading)',
+          coverage: '336+ Acres / Day (7+ Acres / Flight)',
+          flowRate: 'Max 16 L/min (High-Velocity Atomizers)',
+          range: '5 km Dual Frequency Transmission',
+          avoidance: '360° Omnidirectional Obstacle Avoidance Radar'
+        },
+        features: [
+          'Dual capability: 50L heavy spray & granular fertilizer spreading',
+          'High-velocity atomizing nozzles for drift control',
+          'Ultra high daily coverage for vast commercial acreage',
+          '360° omnidirectional obstacle avoidance radar'
+        ]
+      }
+    ];
+
+    // Leadership Team Data
+    const LEADERSHIP_TEAM = [
+      { name: 'Sumama Syed', role: 'CEO & Founder', bg: 'MS Entrepreneurship, LUMS', desc: 'Pioneering aerospace innovation and strategic defense partnerships across South Asia and global markets.' },
+      { name: 'Arham Hassan', role: 'CTO & AI Expert', bg: '8 UAV Design Awards', desc: 'Leading edge AI computer vision, autonomous flight controller algorithms, and custom airframe engineering.' },
+      { name: 'Shanza Nawaz', role: 'Operations Director', bg: 'MS Avionics, NUST', desc: 'Overseeing NASTP facility testing, avionics calibration, and defense production standards.' },
+      { name: 'Fatima Ibrahim', role: 'Marketing Director', bg: 'MS Marketing, IBA', desc: 'Directing international government relations, defense contract communications, and brand strategy.' }
+    ];
+
+    // Engineering & Defense Services Dataset
+    const SAFSHIKAN_ENGINEERING_SERVICES = [
+      {
+        id: 'hw-testing',
+        title: 'Hardware Testing & Integration',
+        category: 'Avionics & Mechanical Stress',
+        icon: 'cpu',
+        status: 'AS PER USER REQUIREMENT',
+        desc: 'Comprehensive hardware stress testing, environmental vibration testing, thermal calibration, and avionics integration conducted under NASTP facility standards for military and industrial UAVs.',
+        features: [
+          'Vibration, Thermal & Environmental Stress Testing',
+          'Structural Airframe Integration & Center-of-Gravity Tuning',
+          'Avionics Power Distribution & ESC Calibration',
+          'Payload Structural Mounting & Mechanism Integration'
+        ]
+      },
+      {
+        id: 'sitl-sim',
+        title: 'SITL ( Software in the Loop ) Simulation',
+        category: 'Autonomous Software Verification',
+        icon: 'terminal',
+        status: 'AS PER USER REQUIREMENT',
+        desc: 'Digital twin autonomous flight simulation environment. Tests PX4 autopilot firmware, flight path navigation algorithms, failsafe trigger conditions, and ground control telemetry in full 3D physics environments prior to physical flight trials.',
+        features: [
+          'Digital Twin 3D Physics & Aerodynamic Modeling',
+          'Autonomous Waypoint & Flight Controller Logic Verification',
+          'Failsafe, Return-To-Home & Blackout Telemetry Simulation',
+          'Multi-UAV Swarm Dynamic Routing Test'
+        ]
+      },
+      {
+        id: 'hitl-sim',
+        title: 'HITL ( Hardware in the Loop ) Simulation',
+        category: 'Real Physical Avionics Simulation',
+        icon: 'sliders',
+        status: 'AS PER USER REQUIREMENT',
+        desc: 'Physical flight controller hardware (Pixhawk, custom PX4 boards, companion computers) linked directly to real-time physics simulators. Validates physical sensor response, PWM motor signals, and hardware timing under high-G tactical maneuvers.',
+        features: [
+          'Real Flight Controller Board Interfacing (PX4/Pixhawk)',
+          'PWM Signal Response & Motor Output Telemetry',
+          'Hardware Sensor Fusion & IMU Gyro Stress Testing',
+          'Electronic Warfare Jamming & Sensor Noise Injection'
+        ]
+      },
+      {
+        id: 'px4-impl',
+        title: 'PX4 Based Software & Hardware Implementation',
+        category: 'Custom Autopilot Firmware & Stacks',
+        icon: 'zap',
+        status: 'AS PER USER REQUIREMENT',
+        desc: 'Tailored PX4 autopilot software stack development, custom MAVLink protocol extensions, companion computer integration (NVIDIA Jetson / Raspberry Pi), AI vision-based obstacle avoidance, and custom sensor driver implementation.',
+        features: [
+          'Custom PX4 Autopilot Firmware & MAVLink Extensions',
+          'AI Companion Computer Integration (NVIDIA Jetson / NPU)',
+          'Obstacle Avoidance & Optical Flow Navigation Systems',
+          'Encrypted Radio & SATCOM Telemetry Driver Development'
+        ]
+      },
+      {
+        id: 'custom-uav',
+        title: 'Custom UAV Design & Development',
+        category: 'Bespoke Airframe & Payload Engineering',
+        icon: 'compass',
+        status: 'AS PER USER REQUIREMENT',
+        desc: 'End-to-end bespoke drone design from mission requirement analysis to 3D CAD modeling, CFD aerodynamic analysis, carbon fiber composite fabrication, custom payload rack design, and flight testing.',
+        features: [
+          'Mission-Specific 3D CAD & Aerodynamic CFD Simulation',
+          'Lightweight Carbon Fiber & Kevlar Airframe Layup',
+          'Custom Ordnance Release / Agricultural Spray Mechanism',
+          'BVLOS Extended Range Airframe Configuration'
+        ]
+      }
+    ];
+
+    // Defense Value Propositions Dataset
+    const DEFENSE_VALUE_PROPOSITIONS = [
+      {
+        id: 'ew-antijam',
+        title: 'EW Anti-Jamming & Resilient Datalinks',
+        tagline: 'Hardware GNSS Anti-Jamming & Dual-Band Frequency Hopping',
+        icon: 'shield-alert',
+        stats: { immunity: '99.4%', recovery: '< 50ms', protocols: 'AES-256 Encrypted C2' },
+        desc: 'Engineered specifically for high-threat Electronic Countermeasure (ECM) environments. Safshikan airframes feature integrated hardware-level GNSS anti-jamming arrays and dual-frequency telemetry links that maintain flight stability and control even under heavy electronic signal suppression.',
+        keyFeatures: [
+          'Dual-band frequency-hopping spread spectrum (FHSS)',
+          'Hardware GNSS CRPA anti-jamming antenna module',
+          'Autonomous return-to-base on telemetry link override',
+          'Real-time signal health & spectrum disruption monitoring'
+        ]
+      },
+      {
+        id: 'kinetic-ordnance',
+        title: 'Kinetic Ordnance & Precision Drop Racks',
+        tagline: 'Modular Independent Release Systems for 60mm & Grenade Payloads',
+        icon: 'target',
+        stats: { accuracy: 'Centimeter RTK', capacity: '6x 60mm Mortars', releaseMode: 'Individual / Salvo' },
+        desc: 'From single 60mm mortar tactical drops to independent 6-mortar salvo releases on The Grim Reaper UAS, our payload drop mechanisms feature high-torque digital servos with dual mechanical safety locks and real-time arming status confirmation.',
+        keyFeatures: [
+          'Independent servo-actuated release pins for precise salvo targeting',
+          'Centimeter-precision RTK positioning lock before release authorization',
+          'Dual mechanical and electronic arm-before-fire safety interlocks',
+          'Modular rack quick-swaps under 90 seconds in field conditions'
+        ]
+      },
+      {
+        id: 'c4isr-optics',
+        title: 'C4ISR Multi-Sensor Thermal & Daylight Optics',
+        tagline: '640x480 Uncooled Thermal Pods with 22x Optical Zoom',
+        icon: 'eye',
+        stats: { thermalRes: '640 x 480 @ 30fps', zoom: '22x Optical Daylight', range: '5 km Target ID' },
+        desc: 'Superior night reconnaissance and perimeter surveillance. Equipped with dual-sensor gyro-stabilized gimbals combining high-resolution thermal imaging for pitch-black operations and 2K daylight cameras with 22x continuous optical zoom.',
+        keyFeatures: [
+          'Gyro-stabilized 3-axis gimbal payload mount',
+          '640x480 thermal sensor for pitch-black target tracking',
+          '22x optical daylight zoom for standoff distance identification',
+          'Low-latency encrypted video feed transmission to ground station'
+        ]
+      },
+      {
+        id: 'bvlos-autonomy',
+        title: 'Long-Range BVLOS & Tactical Logistics',
+        tagline: '25km+ Mission Radius with 16kg Heavy-Lift Delivery Capacity',
+        icon: 'navigation',
+        stats: { maxRadius: '25 KM', maxLift: '16 KG Payload', control: 'Network-Centric 4G' },
+        desc: 'Beyond Visual Line of Sight (BVLOS) operations enabled by network-centric 4G/LTE C2 modules. Enables secure long-range payload transport, rapid emergency medical resupply, and persistent border patrol beyond line-of-sight boundaries.',
+        keyFeatures: [
+          'Global 4G/LTE telemetry backup for unlimited C2 link range',
+          'Autonomous dynamic waypoint route re-calculation',
+          'Multi-UAV swarm management and ground station coordination',
+          'Fail-safe parachute emergency recovery system integration'
+        ]
+      }
+    ];
+
+    // Interactive Defense Threat Scenarios
+    const DEFENSE_SCENARIOS = [
+      {
+        id: 'night-isr',
+        name: 'Night Perimeter & Border ISR',
+        threat: 'Unsanctioned border intrusion & low-visibility stealth reconnaissance',
+        recommendedPlatform: 'Edith Sovran-III / Sentinel Vigilance Pro',
+        readinessScore: 98,
+        deployTime: '90 Seconds',
+        payload: '22x Zoom & 640x480 Thermal Pod',
+        datalink: 'Encrypted RF / 4G LTE Backup',
+        tacticalAdvantage: 'High-altitude silent loiter with pitch-black thermal tracking and immediate threat identification.'
+      },
+      {
+        id: 'kinetic-strike',
+        name: 'Precision Kinetic Strike Mission',
+        threat: 'Fortified hostile target requiring surgical ordnance delivery',
+        recommendedPlatform: 'The Grim Reaper UAS (6x 60mm Mortar Rack)',
+        readinessScore: 96,
+        deployTime: '120 Seconds',
+        payload: '6x 60mm Mortars (Independent Servo Rack)',
+        datalink: 'Dual-Band FHSS Telemetry',
+        tacticalAdvantage: 'Centimeter RTK positioning for precision single or salvo ordnance release with zero collateral footprint.'
+      },
+      {
+        id: 'ecm-defense',
+        name: 'Heavily Jammed ECM Environment',
+        threat: 'Electronic warfare signal disruption & GNSS spoofing attack',
+        recommendedPlatform: 'Edith Sovran Series (Anti-Jamming Edition)',
+        readinessScore: 99,
+        deployTime: '60 Seconds',
+        payload: 'CRPA Anti-Jamming Array + Optical Tracking',
+        datalink: 'Hardened Frequency-Hopping C2',
+        tacticalAdvantage: 'Hardware CRPA anti-jamming protection maintains flight telemetry and mission execution under intense RF jamming.'
+      },
+      {
+        id: 'bvlos-resupply',
+        name: 'Forward Operating Base BVLOS Resupply',
+        threat: 'Inaccessible terrain resupply under contested airspace',
+        recommendedPlatform: 'BVLOS High Payload Delivery (16kg Heavy-Lift)',
+        readinessScore: 95,
+        deployTime: '180 Seconds',
+        payload: '16kg Tactical Resupply Container',
+        datalink: 'Network-Centric 4G & Encrypted SATCOM',
+        tacticalAdvantage: '25km operational radius delivery carrying heavy critical ordnance and supplies without risking human pilot lives.'
+      }
+    ];
+
+    function App() {
+      const [rfpOpen, setRfpOpen] = useState(false);
+      const [privacyOpen, setPrivacyOpen] = useState(false);
+      const [mobileMenu, setMobileMenu] = useState(false);
+      const [scrolled, setScrolled] = useState(false);
+      const [utcTime, setUtcTime] = useState('');
+      const [activeSector, setActiveSector] = useState('Defense & Armed Reconnaissance');
+      const [selectedDrone, setSelectedDrone] = useState(null);
+      const [activeValueProp, setActiveValueProp] = useState('ew-antijam');
+      const [activeScenario, setActiveScenario] = useState('night-isr');
+
+      // CLIENT DESIRED PERFORMANCE REQUIREMENTS STATE
+      const [payloadGrams, setPayloadGrams] = useState(1500); // 100g to 5000g
+      const [desiredFlightMins, setDesiredFlightMins] = useState(25); // 10 to 60 mins
+      const [desiredRangeKm, setDesiredRangeKm] = useState(5); // 1 to 30 km
+      const [videoLink, setVideoLink] = useState('Analog Zero-Latency'); // Analog, Digital 4K, 4G LTE
+      const [missionType, setMissionType] = useState('Kinetic / Payload Delivery'); // Strike, ISR, Agri, Security
+      const [customNote, setCustomNote] = useState('');
+
+      // AGRON Spray Operations Command State
+      const [isSimulating, setIsSimulating] = useState(true);
+      const [agronTelemetry, setAgronTelemetry] = useState({
+        field: 'PUNJAB FIELD SECTOR 4',
+        acresToday: '248 ACRES',
+        flowRate: '14.2 L/MIN',
+        tankLevel: '85% FULL (42.5L)',
+        dosage: '10L / ACRE'
+      });
+
+      const [logs, setLogs] = useState([
+        '[05:58:02] AGRON Central Spray Operations Portal active.',
+        '[05:58:08] AGRON 10L, 30L & 50L Fleet connected (6 UAV Nodes).',
+        '[05:58:15] Field sector boundary loaded: 42 Acres mapped.',
+        '[05:58:22] Centrifugal atomizers calibrated: 16L/min flow verified.',
+        '[05:58:28] Terrain-following radar maintaining 2.5m crop clearance.'
+      ]);
+
+      // Form State
+      const [submitted, setSubmitted] = useState(false);
+      const [formData, setFormData] = useState({
+        name: '', agency: '', email: '', phone: '', droneInterest: 'Custom Quadcopter Requirement Spec', ndaAgreed: true, comments: ''
+      });
+
+      useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener('scroll', handleScroll);
+
+        const updateClock = () => {
+          const now = new Date();
+          setUtcTime(now.toUTCString().slice(17, 25) + ' UTC');
+        };
+        updateClock();
+        const interval = setInterval(updateClock, 1000);
+
+        if (window.lucide) window.lucide.createIcons();
+
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+          clearInterval(interval);
+        };
+      }, []);
+
+      useEffect(() => {
+        if (window.lucide) window.lucide.createIcons();
+      }, [selectedDrone, rfpOpen, mobileMenu, submitted, activeSector, activeValueProp, activeScenario, payloadGrams, desiredFlightMins, desiredRangeKm, videoLink, missionType, customNote]);
+
+      useEffect(() => {
+        if (!isSimulating) return;
+        const interval = setInterval(() => {
+          const acresNum = 240 + Math.floor(Math.random() * 20);
+          const flowNum = (13.5 + Math.random() * 1.5).toFixed(1);
+          setAgronTelemetry(prev => ({
+            ...prev,
+            acresToday: `${acresNum} ACRES`,
+            flowRate: `${flowNum} L/MIN`
+          }));
+        }, 2500);
+        return () => clearInterval(interval);
+      }, [isSimulating]);
+
+      const addLogMessage = (msg) => {
+        const timeStr = new Date().toTimeString().slice(0, 8);
+        setLogs(prev => [`[${timeStr}] ${msg}`, ...prev.slice(0, 6)]);
+      };
+
+      const sectors = ['Defense & Armed Reconnaissance', 'Agriculture & Civil Solutions'];
+      const filteredProducts = OFFICIAL_SAFSHIKAN_PRODUCTS.filter(p => p.sector === activeSector);
+
+      const handleOpenCustomQuadRFP = () => {
+        const clientSpecSummary = `Target Payload: ${payloadGrams < 1000 ? `${payloadGrams}g` : `${(payloadGrams/1000).toFixed(1)}kg`} | Target Range: ${desiredRangeKm} km | Target Flight Time: ${desiredFlightMins} mins | Video Datalink: ${videoLink} | Primary Mission: ${missionType}${customNote ? ` | Custom Notes: ${customNote}` : ''}`;
+        setFormData(prev => ({
+          ...prev,
+          droneInterest: `Custom Quadcopter Requirement`,
+          comments: `[CLIENT DESIRED PERFORMANCE SPECIFICATIONS]\n${clientSpecSummary}`
+        }));
+        setRfpOpen(true);
+      };
+
+      return (
+        <div className="min-h-screen">
+          
+          {/* Header Navigation */}
+          <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            scrolled ? 'bg-[#050914]/95 border-b border-blue-500/30 py-2 shadow-[0_4px_30px_rgba(0,119,255,0.25)] backdrop-blur' : 'bg-gradient-to-b from-[#050914] via-[#050914]/90 to-transparent py-3.5'
+          }`}>
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+              
+              {/* Left: Brand Logo & Optional Status */}
+              <div className="flex items-center gap-3 shrink-0">
+                <a href="#" className="flex items-center gap-3 group">
+                  <div className="relative w-14 h-14 rounded-full bg-white p-2 flex items-center justify-center shadow-[0_0_22px_rgba(0,163,255,0.6)] border border-sky-400 group-hover:scale-105 transition-all shrink-0">
+                    <img 
+                      src="./assets/logo_blue_transparent.png" 
+                      alt="Safshikan Official Blue Logo" 
+                      className="w-full h-full object-contain"
+                      onError={(e) => { e.target.onerror=null; e.target.src='./assets/logo_blue.png'; }}
+                    />
+                    <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-400 border-2 border-[#050914] rounded-full animate-ping"></span>
+                    <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-emerald-400 border-2 border-[#050914] rounded-full"></span>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-orbitron font-extrabold text-lg sm:text-xl tracking-wider text-white">SAFSHIKAN</span>
+                      <span className="px-1.5 py-0.5 text-[9px] font-mono bg-blue-950/80 text-sky-300 border border-blue-500/40 rounded uppercase tracking-wider font-bold">AEROSPACE</span>
+                    </div>
+                    <p className="text-[9px] font-mono text-slate-400 tracking-widest uppercase">NASTP Alpha // Rawalpindi</p>
+                  </div>
+                </a>
+
+                {/* Status Telemetry Pill */}
+                <div className="hidden 2xl:flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#0b1326]/90 border border-blue-500/30 text-[10px] font-mono shadow-[0_0_12px_rgba(0,119,255,0.15)] shrink-0">
+                  <div className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                    <i data-lucide="radio" className="w-3 h-3 animate-pulse"></i>
+                    <span>ONLINE</span>
+                  </div>
+                  <div className="h-3 w-px bg-slate-700"></div>
+                  <div className="text-slate-200">
+                    <span className="text-slate-400">UTC:</span> {utcTime || '00:00:00'}
+                  </div>
+                </div>
+              </div>
+
+              {/* Center: Nav links - Perfectly Centered */}
+              <nav className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-300 mx-auto font-sans">
+                <a href="#products" className="hover:text-sky-400 transition-colors whitespace-nowrap">Products Catalog</a>
+                <a href="#services" className="hover:text-sky-400 transition-colors whitespace-nowrap">Engineering Services</a>
+                <a href="#agron-portal" className="hover:text-emerald-400 transition-colors whitespace-nowrap">AGRON Agri Portal</a>
+                <a href="#simulator" className="hover:text-sky-400 transition-colors whitespace-nowrap">Quadcopter Requirements</a>
+                <a href="#team" className="hover:text-sky-400 transition-colors whitespace-nowrap">Leadership</a>
+              </nav>
+
+              {/* Right: Action Button & Mobile Toggle */}
+              <div className="flex items-center gap-3 shrink-0">
+                <button 
+                  onClick={() => setRfpOpen(true)}
+                  className="hidden sm:flex px-4 py-2 sm:px-5 sm:py-2.5 rounded bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 hover:from-blue-500 hover:to-cyan-300 text-white font-orbitron font-bold text-xs tracking-wider uppercase transition-all shadow-[0_0_18px_rgba(0,163,255,0.4)] items-center gap-2 whitespace-nowrap shrink-0"
+                >
+                  <i data-lucide="terminal" className="w-3.5 h-3.5"></i>
+                  <span>Request Quotation</span>
+                </button>
+
+                <button 
+                  onClick={() => setMobileMenu(!mobileMenu)}
+                  className="lg:hidden p-2 rounded bg-slate-900 border border-slate-700 text-slate-300 hover:text-white"
+                  aria-label="Toggle Menu"
+                >
+                  <i data-lucide={mobileMenu ? "x" : "menu"} className="w-5 h-5"></i>
+                </button>
+              </div>
+
+            </div>
+
+            {/* Mobile Dropdown Drawer */}
+            {mobileMenu && (
+              <div className="lg:hidden bg-[#050914]/98 border-b border-blue-500/30 px-6 pt-4 pb-6 space-y-3 font-mono text-xs shadow-2xl backdrop-blur-lg mt-2">
+                <div className="flex items-center gap-3 py-2 text-emerald-400 border-b border-slate-800">
+                  <i data-lucide="radio" className="w-3.5 h-3.5 animate-pulse"></i>
+                  <span>UPLINK ONLINE | UTC: {utcTime}</span>
+                </div>
+                <a 
+                  href="#products" 
+                  onClick={() => setMobileMenu(false)}
+                  className="block py-2 text-slate-200 hover:text-sky-400 border-b border-slate-800/50"
+                >
+                  &gt; Products Catalog
+                </a>
+                <a 
+                  href="#services" 
+                  onClick={() => setMobileMenu(false)}
+                  className="block py-2 text-slate-200 hover:text-sky-400 border-b border-slate-800/50"
+                >
+                  &gt; Engineering Services
+                </a>
+                <a 
+                  href="#agron-portal" 
+                  onClick={() => setMobileMenu(false)}
+                  className="block py-2 text-slate-200 hover:text-emerald-400 border-b border-slate-800/50"
+                >
+                  &gt; AGRON Agri Portal
+                </a>
+                <a 
+                  href="#simulator" 
+                  onClick={() => setMobileMenu(false)}
+                  className="block py-2 text-slate-200 hover:text-sky-400 border-b border-slate-800/50"
+                >
+                  &gt; Quadcopter Requirements
+                </a>
+                <a 
+                  href="#team" 
+                  onClick={() => setMobileMenu(false)}
+                  className="block py-2 text-slate-200 hover:text-sky-400 border-b border-slate-800/50"
+                >
+                  &gt; Leadership
+                </a>
+                <button 
+                  onClick={() => { setMobileMenu(false); setRfpOpen(true); }}
+                  className="w-full mt-3 py-3 bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 text-white font-orbitron font-bold text-xs uppercase tracking-wider rounded shadow-[0_0_15px_rgba(0,163,255,0.4)] flex items-center justify-center gap-2"
+                >
+                  <i data-lucide="terminal" className="w-3.5 h-3.5"></i>
+                  <span>Request Quotation</span>
+                </button>
+              </div>
+            )}
+          </header>
+
+          {/* Hero Banner Section */}
+          <section className="relative min-h-screen pt-40 pb-20 overflow-hidden flex items-center tactical-grid-blue">
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-blue-600/15 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+              <div className="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div className="lg:col-span-7 space-y-6">
+                  
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded bg-[#0f1c36] border border-blue-500/40 text-sky-300 font-mono text-xs tracking-wider uppercase shadow-[0_0_15px_rgba(0,119,255,0.2)]">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>DEFENSE & PRECISION AGRICULTURE UAVs</span>
+                    <span className="text-slate-600">|</span>
+                    <span className="text-slate-300">NASTP ALPHA</span>
+                  </div>
+
+                  {/* Main Title */}
+                  <h1 className="font-orbitron font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1]">
+                    ADVANCED <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-emerald-400 text-glow-blue">AEROSPACE & QUADCOPTER</span> SYSTEMS
+                  </h1>
+
+                  <p className="text-slate-300 text-base sm:text-lg max-w-2xl font-sans leading-relaxed">
+                    Safshikan engineers state-of-the-art quadcopter platforms (<strong className="text-sky-400 font-mono">5", 7", 10" Edith Sovran Series</strong>, <strong className="text-sky-400 font-mono">Grim Reaper UAS</strong>) and the proprietary <strong className="text-emerald-400 font-mono">AGRON Spray Operations Command Portal</strong> for agricultural drones (<strong className="text-emerald-400 font-mono">AGRON 10L, 30L & 50L</strong>).
+                  </p>
+
+                  {/* Telemetry Stats Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2 font-mono">
+                    <div className="tactical-card-blue p-3 rounded">
+                      <span className="text-[10px] text-slate-400 block">ACTIVE PROJECTS</span>
+                      <p className="font-orbitron font-bold text-xl text-white mt-1">80+ <span className="text-xs text-sky-400">DONE</span></p>
+                    </div>
+                    <div className="tactical-card-blue p-3 rounded">
+                      <span className="text-[10px] text-slate-400 block">DESIGN AWARDS</span>
+                      <p className="font-orbitron font-bold text-xl text-white mt-1">13 <span className="text-xs text-amber-400">WIN</span></p>
+                    </div>
+                    <div className="tactical-card-blue p-3 rounded">
+                      <span className="text-[10px] text-slate-400 block">EXPERT ENGINEERS</span>
+                      <p className="font-orbitron font-bold text-xl text-white mt-1">15 <span className="text-xs text-emerald-400">NASTP</span></p>
+                    </div>
+                    <div className="tactical-card-blue p-3 rounded">
+                      <span className="text-[10px] text-slate-400 block">AGRI SPRAY CAPACITY</span>
+                      <p className="font-orbitron font-bold text-xl text-white mt-1">336 <span className="text-xs text-emerald-400">AC/DAY</span></p>
+                    </div>
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <button 
+                      onClick={() => setRfpOpen(true)}
+                      className="px-6 py-3.5 rounded bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-400 hover:from-blue-500 hover:to-emerald-300 text-white font-orbitron font-bold text-sm tracking-wider uppercase transition-all shadow-[0_0_25px_rgba(0,163,255,0.5)] flex items-center gap-2"
+                    >
+                      <i data-lucide="shield" className="w-4 h-4"></i>
+                      <span>Request Product Specs</span>
+                    </button>
+                    <a 
+                      href="#simulator"
+                      className="px-6 py-3.5 rounded bg-[#0b1326] hover:bg-[#121e3b] border border-sky-500/40 text-sky-300 font-orbitron font-semibold text-sm tracking-wider uppercase transition-all flex items-center gap-2 hover:border-sky-400"
+                    >
+                      <i data-lucide="sliders" className="w-4 h-4 text-sky-400"></i>
+                      <span>Quadcopter Requirements</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right Hero Visual Feature */}
+                <div className="lg:col-span-5 relative">
+                  <div className="tactical-card-blue p-3 rounded-xl border border-blue-500/40 glow-blue">
+                    <div className="relative aspect-[16/11] bg-slate-950 rounded-lg overflow-hidden border border-slate-800 flex items-center justify-center p-2">
+                      <img 
+                        src="./assets/bvlos_catalog_actual_optimized.jpg" 
+                        alt="Safshikan Quadcopter & Heavy Tactical UAS" 
+                        className="w-full h-full object-cover rounded"
+                        onError={(e) => { e.target.onerror=null; e.target.src='./assets/grim_reaper.jpg'; }}
+                      />
+                      <div className="absolute bottom-3 left-3 right-3 text-[10px] font-mono bg-[#0b1326]/90 text-sky-300 px-3 py-1.5 border border-blue-500/40 rounded flex items-center justify-between">
+                        <span>SAFSHIKAN QUADCOPTER PLATFORMS</span>
+                        <span className="text-emerald-400">5" - 10" FPV & ISR</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* INTERACTIVE DEFENSE VALUE PROPOSITIONS & CORE CAPABILITIES */}
+          <section className="py-24 bg-[#070c18] border-t border-blue-900/40 relative overflow-hidden">
+            <div className="absolute top-1/2 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-950/80 border border-blue-500/40 text-sky-400 font-mono text-xs tracking-widest uppercase">
+                  <i data-lucide="shield-check" className="w-3.5 h-3.5"></i>
+                  <span>TACTICAL DEFENSE SUPERIORITY</span>
+                </div>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">MILITARY-GRADE TACTICAL CAPABILITIES</h2>
+                <p className="text-slate-300 text-sm font-sans">
+                  Safshikan quadcopter and fixed-frame UAS platforms are custom-built for high-threat tactical operational environments. Click a capability pillar below to inspect avionics, anti-jamming telemetry, and ordnance integration.
+                </p>
+              </div>
+
+              {/* Value Proposition Interactive Selector Tabs */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+                {DEFENSE_VALUE_PROPOSITIONS.map(vp => (
+                  <button
+                    key={vp.id}
+                    onClick={() => setActiveValueProp(vp.id)}
+                    className={`p-5 rounded-lg text-left transition-all duration-300 border flex flex-col justify-between ${
+                      activeValueProp === vp.id
+                        ? 'bg-gradient-to-br from-[#0f1c36] to-[#0b1326] border-sky-400 shadow-[0_0_25px_rgba(0,163,255,0.35)] scale-[1.02]'
+                        : 'bg-[#0b1326]/80 border-slate-800 hover:border-slate-700 hover:bg-[#0f1c36]/50'
+                    }`}
+                  >
+                    <div className="space-y-3">
+                      <div className="w-10 h-10 rounded bg-blue-950 border border-blue-500/40 flex items-center justify-center text-sky-400">
+                        <i data-lucide={vp.icon} className="w-5 h-5"></i>
+                      </div>
+                      <h3 className="font-orbitron font-bold text-white text-base leading-snug">{vp.title}</h3>
+                      <p className="text-[11px] font-mono text-slate-400 line-clamp-2">{vp.tagline}</p>
+                    </div>
+
+                    <div className="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono">
+                      <span className={activeValueProp === vp.id ? 'text-sky-300 font-bold' : 'text-slate-500'}>INSPECT SPECS</span>
+                      <i data-lucide="chevron-right" className={`w-4 h-4 transition-transform ${activeValueProp === vp.id ? 'text-sky-400 translate-x-1' : 'text-slate-600'}`}></i>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Active Value Proposition Detail Showcase */}
+              {(() => {
+                const currentVP = DEFENSE_VALUE_PROPOSITIONS.find(v => v.id === activeValueProp) || DEFENSE_VALUE_PROPOSITIONS[0];
+                return (
+                  <div className="mt-8 tactical-card-blue p-6 sm:p-8 rounded-xl border border-sky-500/50 shadow-[0_0_35px_rgba(0,163,255,0.2)]">
+                    <div className="grid lg:grid-cols-12 gap-8 items-center">
+                      
+                      <div className="lg:col-span-7 space-y-5">
+                        <div className="flex items-center gap-3">
+                          <span className="px-3 py-1 rounded bg-sky-950 text-sky-300 border border-sky-500/40 font-mono text-xs uppercase tracking-wider font-bold">
+                            DEFENSE SPECIFICATION SHEET
+                          </span>
+                          <span className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            NASTP COMPLIANT
+                          </span>
+                        </div>
+
+                        <h3 className="font-orbitron font-extrabold text-2xl sm:text-3xl text-white">{currentVP.title}</h3>
+                        <p className="text-slate-300 text-sm font-sans leading-relaxed">{currentVP.desc}</p>
+
+                        <div className="grid sm:grid-cols-3 gap-3 pt-2 font-mono text-xs">
+                          {Object.entries(currentVP.stats).map(([k, v]) => (
+                            <div key={k} className="bg-slate-950 p-3 rounded border border-slate-800">
+                              <span className="text-[10px] text-slate-400 uppercase block">{k}</span>
+                              <span className="font-orbitron font-bold text-sky-300 text-sm mt-0.5 block">{v}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="space-y-2 pt-3 border-t border-slate-800">
+                          <span className="text-xs font-mono text-slate-400 uppercase block font-bold">TACTICAL INTEGRATION ADVANTAGES:</span>
+                          <div className="grid sm:grid-cols-2 gap-2 text-xs font-mono text-slate-200">
+                            {currentVP.keyFeatures.map((feat, idx) => (
+                              <div key={idx} className="flex items-start gap-2">
+                                <i data-lucide="check-circle" className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span>{feat}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-5 bg-slate-950 p-6 rounded-lg border border-slate-800 space-y-4 font-mono text-xs">
+                        <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                          <span className="font-orbitron font-bold text-white text-sm">DEFENSE STANDARDS & ACCREDITATION</span>
+                          <span className="text-[10px] text-sky-400 bg-sky-950 px-2 py-0.5 rounded border border-sky-500/30">CERTIFIED</span>
+                        </div>
+
+                        <div className="space-y-3">
+                          <div className="p-3 rounded bg-[#0b1326] border border-blue-500/30 flex items-center justify-between">
+                            <div>
+                              <span className="font-bold text-white block">MIL-STD-810H RUGGEDIZATION</span>
+                              <span className="text-[10px] text-slate-400">Vibration, Shock & Thermal Stress Tested</span>
+                            </div>
+                            <i data-lucide="shield-check" className="w-5 h-5 text-emerald-400"></i>
+                          </div>
+
+                          <div className="p-3 rounded bg-[#0b1326] border border-blue-500/30 flex items-center justify-between">
+                            <div>
+                              <span className="font-bold text-white block">C4ISR PROTOCOL COMPLIANCE</span>
+                              <span className="text-[10px] text-slate-400">Encrypted Ground Command Telemetry</span>
+                            </div>
+                            <i data-lucide="radio" className="w-5 h-5 text-sky-400"></i>
+                          </div>
+
+                          <div className="p-3 rounded bg-[#0b1326] border border-blue-500/30 flex items-center justify-between">
+                            <div>
+                              <span className="font-bold text-white block">IP67 ALL-WEATHER CAPABLE</span>
+                              <span className="text-[10px] text-slate-400">Dustproof & Water-Resistant Operations</span>
+                            </div>
+                            <i data-lucide="cloud-rain" className="w-5 h-5 text-amber-400"></i>
+                          </div>
+                        </div>
+
+                        <button 
+                          onClick={() => setRfpOpen(true)}
+                          className="w-full mt-4 py-3 bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 text-white font-orbitron font-bold text-xs uppercase tracking-wider rounded shadow-[0_0_15px_rgba(0,163,255,0.4)] flex items-center justify-center gap-2"
+                        >
+                          <i data-lucide="terminal" className="w-4 h-4"></i>
+                          <span>Request Classified Defense Specs</span>
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })()}
+
+            </div>
+          </section>
+
+          {/* Official Safshikan Products Catalog */}
+          <section id="products" className="py-24 bg-[#050914] border-t border-blue-900/40">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-mono text-sky-400 uppercase tracking-widest">[OFFICIAL CATALOG DATASET]</span>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">SAFSHIKAN AEROSPACE PORTFOLIO</h2>
+                <p className="text-slate-300 text-sm font-sans">
+                  Synchronized with the official Saf Shikan UAV Catalog. Select a sector below to inspect products, avionics, and flight endurance telemetry.
+                </p>
+              </div>
+
+              {/* ONLY 2 SECTOR TABS */}
+              <div className="flex flex-wrap justify-center gap-4 mt-10 font-mono text-xs">
+                {sectors.map(sec => (
+                  <button
+                    key={sec}
+                    onClick={() => setActiveSector(sec)}
+                    className={`px-6 py-3.5 rounded-lg uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
+                      activeSector === sec 
+                        ? sec.includes('Defense')
+                          ? 'bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400 text-white font-bold shadow-[0_0_25px_rgba(0,163,255,0.5)] border border-sky-300'
+                          : 'bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400 text-white font-bold shadow-[0_0_25px_rgba(16,185,129,0.5)] border border-emerald-300'
+                        : 'bg-[#0b1326] border border-blue-500/30 text-slate-300 hover:border-sky-400 hover:text-white'
+                    }`}
+                  >
+                    {sec.includes('Defense') ? <i data-lucide="shield" className="w-4 h-4 text-sky-300"></i> : <i data-lucide="sprout" className="w-4 h-4 text-emerald-300"></i>}
+                    <span>{sec}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Products Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                {filteredProducts.map(product => (
+                  <div key={product.id} className="tactical-card-blue rounded-lg overflow-hidden flex flex-col justify-between hover:border-sky-400 transition-colors">
+                    <div>
+                      <div className="relative aspect-[16/12] bg-slate-950 flex items-center justify-center p-1">
+                        <img 
+                          src={product.image} 
+                          alt={product.name} 
+                          className="w-full h-full object-cover rounded" 
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src = './assets/grim_reaper.jpg';
+                          }}
+                        />
+                        <div className="absolute top-3 left-3 bg-[#0b1326]/90 text-sky-300 font-mono text-[10px] px-2.5 py-1 rounded border border-blue-500/40">
+                          {product.category}
+                        </div>
+                      </div>
+                      <div className="p-6 space-y-3">
+                        <h3 className="font-orbitron font-bold text-xl text-white">{product.name}</h3>
+                        <p className="text-xs font-mono text-sky-400">{product.tagline}</p>
+                        <p className="text-slate-300 text-xs line-clamp-3 font-sans leading-relaxed">{product.description}</p>
+                        
+                        <div className="pt-3 border-t border-slate-800 grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300">
+                          <div><span className="text-slate-500 block text-[10px]">PAYLOAD</span> <span className="text-white font-bold">{product.specs.payload}</span></div>
+                          <div><span className="text-slate-500 block text-[10px]">RANGE / COVERAGE</span> <span className="text-sky-400 font-bold">{product.specs.coverage || product.specs.range}</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="px-6 pb-6 pt-2 flex gap-3">
+                      <button 
+                        onClick={() => setSelectedDrone(product)}
+                        className="flex-1 py-2.5 rounded bg-[#0b1326] border border-blue-500/40 text-slate-200 hover:text-sky-300 font-orbitron text-xs uppercase transition-colors"
+                      >
+                        Inspect Specs
+                      </button>
+                      <button 
+                        onClick={() => setRfpOpen(true)}
+                        className="px-4 py-2.5 rounded bg-sky-500 hover:bg-sky-400 text-black font-orbitron text-xs font-bold transition-colors"
+                      >
+                        RFP
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+          {/* SAFSHIKAN AEROSPACE & DEFENSE SERVICES SECTION */}
+          <section id="services" className="py-24 bg-[#03060c] border-t border-blue-900/50 relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-600/10 blur-[140px] pointer-events-none rounded-full"></div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-blue-950/80 border border-blue-500/40 text-sky-300 font-mono text-xs uppercase tracking-widest font-bold">
+                  <i data-lucide="wrench" className="w-3.5 h-3.5 text-sky-400"></i>
+                  <span>AEROSPACE & DEFENSE SERVICES</span>
+                </div>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">ENGINEERING & TECHNICAL SERVICES</h2>
+                <p className="text-slate-300 text-sm font-sans">
+                  Safshikan provides specialized UAV hardware testing, flight simulation, PX4 stack implementation, and custom airframe development configured strictly <strong>as per user requirements</strong>.
+                </p>
+              </div>
+
+              {/* Services Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                {SAFSHIKAN_ENGINEERING_SERVICES.map((srv, index) => (
+                  <div 
+                    key={srv.id} 
+                    className={`tactical-card-blue rounded-lg p-6 sm:p-7 space-y-5 border border-blue-900/50 hover:border-sky-400 transition-all flex flex-col justify-between group ${
+                      index === 4 ? 'md:col-span-2 lg:col-span-1' : ''
+                    }`}
+                  >
+                    <div className="space-y-4">
+                      {/* Top Bar: Icon + Status */}
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="w-12 h-12 rounded-lg bg-[#0b1326] border border-blue-500/40 flex items-center justify-center text-sky-400 group-hover:scale-110 group-hover:border-sky-400 transition-all shrink-0">
+                          <i data-lucide={srv.icon} className="w-6 h-6"></i>
+                        </div>
+                        <span className="px-2.5 py-1 rounded bg-emerald-950/90 text-emerald-300 border border-emerald-500/40 font-mono text-[10px] uppercase font-bold tracking-wider text-right shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                          {srv.status}
+                        </span>
+                      </div>
+
+                      {/* Service Title & Category */}
+                      <div>
+                        <span className="text-[10px] font-mono text-sky-400 uppercase block tracking-wider font-semibold">{srv.category}</span>
+                        <h3 className="font-orbitron font-bold text-white text-lg sm:text-xl mt-0.5 group-hover:text-sky-300 transition-colors">{srv.title}</h3>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-slate-300 text-xs font-sans leading-relaxed">{srv.desc}</p>
+
+                      {/* Deliverables Checklist */}
+                      <div className="space-y-2 pt-3 border-t border-slate-800/80 font-mono text-xs text-slate-200">
+                        <span className="text-[10px] text-slate-400 uppercase block font-bold">KEY TECHNICAL SCOPE:</span>
+                        {srv.features.map((feat, idx) => (
+                          <div key={idx} className="flex items-start gap-2 text-[11px]">
+                            <i data-lucide="check-circle" className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action CTA */}
+                    <div className="pt-4">
+                      <button 
+                        onClick={() => {
+                          setFormData(prev => ({
+                            ...prev,
+                            droneInterest: srv.title,
+                            comments: `[SERVICE REQUEST]: Inquiry regarding ${srv.title} (${srv.status}). Requirements:`
+                          }));
+                          setRfpOpen(true);
+                        }}
+                        className="w-full py-2.5 bg-[#0b1326] hover:bg-gradient-to-r hover:from-blue-600 hover:to-sky-400 hover:text-white border border-blue-500/40 hover:border-sky-300 text-sky-300 font-orbitron font-bold text-xs uppercase rounded transition-all flex items-center justify-center gap-2"
+                      >
+                        <i data-lucide="send" className="w-3.5 h-3.5"></i>
+                        <span>Request Service Proposal</span>
+                      </button>
+                    </div>
+
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+          {/* STREAMLINED CLIENT DESIRED PERFORMANCE REQUIREMENTS COLLECTOR */}
+          <section id="simulator" className="py-24 bg-[#050914] border-t border-blue-900/40">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-mono text-sky-400 uppercase tracking-widest">[QUADCOPTER REQUIREMENT SPEC COLLECTOR]</span>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">CLIENT PERFORMANCE EXPECTATION SHEET</h2>
+                <p className="text-slate-300 text-sm font-sans">
+                  Select your desired performance targets (payload capacity, flight time, radius, and video link). Your customized requirement sheet will update on the right for immediate review and submission.
+                </p>
+              </div>
+
+              <div className="mt-12 grid lg:grid-cols-12 gap-8">
+                
+                {/* Left Side: Client Desired Performance Inputs */}
+                <div className="lg:col-span-7 tactical-card-blue p-6 sm:p-8 rounded-lg space-y-6 border border-blue-500/40">
+                  <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <h3 className="font-orbitron font-bold text-white text-lg flex items-center gap-2">
+                      <i data-lucide="sliders" className="w-5 h-5 text-sky-400"></i>
+                      <span>Specify Desired Performance</span>
+                    </h3>
+                    <span className="text-xs font-mono text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded border border-emerald-500/30">CLIENT SPECIFICATION FORM</span>
+                  </div>
+
+                  {/* 1. Target Payload Capacity */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-slate-300 uppercase">1. Target Payload Capacity</span>
+                      <span className="text-sky-400 font-bold">{payloadGrams < 1000 ? `${payloadGrams} Grams` : `${(payloadGrams / 1000).toFixed(1)} KG (${payloadGrams}g)`}</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="100" 
+                      max="5000" 
+                      step="50" 
+                      value={payloadGrams} 
+                      onChange={e => setPayloadGrams(Number(e.target.value))} 
+                      className="w-full accent-sky-400 cursor-pointer" 
+                    />
+                    <div className="flex justify-between text-[10px] font-mono text-slate-500">
+                      <span>100g (GoPro/Sensor)</span>
+                      <span>750g (Grenade)</span>
+                      <span>1.5kg (60mm Mortar)</span>
+                      <span>5kg (Heavy Ordnance)</span>
+                    </div>
+                  </div>
+
+                  {/* 2. Target Flight Endurance & Radius Sliders */}
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs font-mono">
+                        <span className="text-slate-300 uppercase">2. Target Flight Time</span>
+                        <span className="text-emerald-400 font-bold">{desiredFlightMins} Minutes</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="10" 
+                        max="60" 
+                        step="5" 
+                        value={desiredFlightMins} 
+                        onChange={e => setDesiredFlightMins(Number(e.target.value))} 
+                        className="w-full accent-emerald-400 cursor-pointer" 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs font-mono">
+                        <span className="text-slate-300 uppercase">3. Target Mission Radius</span>
+                        <span className="text-amber-400 font-bold">{desiredRangeKm} KM</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="1" 
+                        max="30" 
+                        step="1" 
+                        value={desiredRangeKm} 
+                        onChange={e => setDesiredRangeKm(Number(e.target.value))} 
+                        className="w-full accent-amber-400 cursor-pointer" 
+                      />
+                    </div>
+                  </div>
+
+                  {/* 4. Preferred Video Link & Primary Mission Type */}
+                  <div className="grid sm:grid-cols-2 gap-4 font-mono text-xs">
+                    <div className="space-y-1.5">
+                      <label className="text-slate-400 text-[11px] block uppercase">4. Preferred Video & Datalink</label>
+                      <select 
+                        value={videoLink} 
+                        onChange={e => setVideoLink(e.target.value)}
+                        className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded text-white font-mono focus:border-sky-400"
+                      >
+                        <option value="Analog Zero-Latency">Analog Video (Zero Latency Screen Feed)</option>
+                        <option value="Digital 4K HD">Digital 4K HD Video Feed (DJI System)</option>
+                        <option value="Encrypted 4G LTE Datalink">Encrypted 4G LTE Datalink (BVLOS Network)</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-slate-400 text-[11px] block uppercase">5. Primary Operational Mission</label>
+                      <select 
+                        value={missionType} 
+                        onChange={e => setMissionType(e.target.value)}
+                        className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded text-white font-mono focus:border-sky-400"
+                      >
+                        <option value="Kinetic / Payload Delivery">Kinetic / Payload Drop (Mortar / Grenade Delivery)</option>
+                        <option value="Tactical ISR & Night Reconnaissance">Tactical ISR & Night Reconnaissance (Thermal + Zoom)</option>
+                        <option value="Kamikaze One-Way Strike">Kamikaze One-Way Precision Strike</option>
+                        <option value="Security & Perimeter Patrol">Security & Night Perimeter Patrol (Megaphone + Optics)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* 6. Custom Notes */}
+                  <div className="space-y-1.5 font-mono text-xs">
+                    <label className="text-slate-400 text-[11px] block uppercase">6. Custom Requirements / Additional Notes (Optional)</label>
+                    <input 
+                      type="text" 
+                      placeholder="e.g., Night thermal vision required, anti-jamming, specific drop release module..."
+                      value={customNote} 
+                      onChange={e => setCustomNote(e.target.value)} 
+                      className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded text-white font-mono text-xs focus:border-sky-400 placeholder:text-slate-600"
+                    />
+                  </div>
+
+                </div>
+
+                {/* Right Side: Client Requirement Spec Summary Card & Direct Submit */}
+                <div className="lg:col-span-5 tactical-card-blue p-6 sm:p-8 rounded-lg space-y-6 border border-sky-500/60 flex flex-col justify-between shadow-[0_0_30px_rgba(0,163,255,0.25)]">
+                  <div className="space-y-5">
+                    <div className="border-b border-slate-800 pb-3 flex items-center justify-between">
+                      <h3 className="font-orbitron font-bold text-sky-400 text-lg flex items-center gap-2">
+                        <i data-lucide="file-text" className="w-5 h-5 text-sky-400"></i>
+                        <span>Client Requirement Sheet</span>
+                      </h3>
+                      <span className="text-[10px] font-mono bg-sky-950 text-sky-300 px-2 py-0.5 rounded border border-sky-500/30">READY TO SUBMIT</span>
+                    </div>
+
+                    {/* High-Tech Readable Spec Card */}
+                    <div className="space-y-3 font-mono text-xs">
+                      
+                      <div className="bg-slate-950 p-4 rounded border border-slate-800 flex justify-between items-center">
+                        <span className="text-slate-400">TARGET PAYLOAD CAPACITY:</span>
+                        <span className="font-orbitron text-base font-bold text-white">{payloadGrams < 1000 ? `${payloadGrams}g` : `${(payloadGrams / 1000).toFixed(1)} KG`}</span>
+                      </div>
+
+                      <div className="bg-slate-950 p-4 rounded border border-slate-800 flex justify-between items-center">
+                        <span className="text-slate-400">DESIRED FLIGHT TIME:</span>
+                        <span className="font-orbitron text-base font-bold text-emerald-400">{desiredFlightMins} MINUTES</span>
+                      </div>
+
+                      <div className="bg-slate-950 p-4 rounded border border-slate-800 flex justify-between items-center">
+                        <span className="text-slate-400">TARGET MISSION RADIUS:</span>
+                        <span className="font-orbitron text-base font-bold text-amber-400">{desiredRangeKm} KM</span>
+                      </div>
+
+                      <div className="bg-slate-950 p-4 rounded border border-slate-800 space-y-1">
+                        <span className="text-slate-400 text-[10px] block uppercase">VIDEO & DATALINK SYSTEM:</span>
+                        <span className="font-bold text-sky-300 block">{videoLink}</span>
+                      </div>
+
+                      <div className="bg-slate-950 p-4 rounded border border-slate-800 space-y-1">
+                        <span className="text-slate-400 text-[10px] block uppercase">PRIMARY MISSION PROFILE:</span>
+                        <span className="font-bold text-sky-300 block">{missionType}</span>
+                      </div>
+
+                      {customNote && (
+                        <div className="bg-slate-950 p-4 rounded border border-slate-800 space-y-1">
+                          <span className="text-slate-400 text-[10px] block uppercase">ADDITIONAL CUSTOM NOTES:</span>
+                          <span className="text-slate-200 block italic">"{customNote}"</span>
+                        </div>
+                      )}
+
+                    </div>
+                  </div>
+
+                  {/* Direct Submit Button */}
+                  <button 
+                    onClick={handleOpenCustomQuadRFP}
+                    className="w-full py-4 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-400 hover:from-blue-500 hover:to-emerald-300 text-white font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-[0_0_25px_rgba(0,163,255,0.5)] flex items-center justify-center gap-2"
+                  >
+                    <i data-lucide="send" className="w-4 h-4"></i>
+                    <span>Submit Requirement Specs to Safshikan</span>
+                  </button>
+
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* INTERACTIVE THREAT RESPONSE & DEFENSE READINESS MATRIX */}
+          <section className="py-24 bg-[#050914] border-t border-blue-900/40 relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-mono text-sky-400 uppercase tracking-widest">[TACTICAL THREAT SCENARIO SIMULATOR]</span>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">INTERACTIVE DEFENSE READINESS MATRIX</h2>
+                <p className="text-slate-300 text-sm font-sans">
+                  Simulate operational threat scenarios to evaluate Safshikan UAV platform readiness, deployment speed, payload configurations, and electronic warfare survivability scores.
+                </p>
+              </div>
+
+              {/* Interactive Scenario Buttons */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 font-mono text-xs">
+                {DEFENSE_SCENARIOS.map(scen => (
+                  <button
+                    key={scen.id}
+                    onClick={() => setActiveScenario(scen.id)}
+                    className={`p-4 rounded-lg text-left transition-all duration-300 border flex flex-col justify-between gap-3 ${
+                      activeScenario === scen.id
+                        ? 'bg-gradient-to-r from-blue-900/80 via-sky-900/80 to-blue-950 border-sky-400 text-white shadow-[0_0_20px_rgba(0,163,255,0.4)]'
+                        : 'bg-[#0b1326] border-blue-500/30 text-slate-300 hover:border-sky-400 hover:text-white'
+                    }`}
+                  >
+                    <div className="space-y-1">
+                      <span className="text-[10px] text-slate-400 uppercase block font-bold">THREAT SCENARIO</span>
+                      <span className="font-orbitron font-bold text-sm text-sky-300 block">{scen.name}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-[10px] pt-2 border-t border-slate-800">
+                      <span className="text-slate-400">READINESS</span>
+                      <span className="font-bold text-emerald-400">{scen.readinessScore}% MATCH</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Selected Scenario Live Tactical Readout */}
+              {(() => {
+                const currentScen = DEFENSE_SCENARIOS.find(s => s.id === activeScenario) || DEFENSE_SCENARIOS[0];
+                return (
+                  <div className="mt-8 tactical-card-blue p-6 sm:p-8 rounded-xl border border-sky-500/50 shadow-[0_0_30px_rgba(0,163,255,0.2)]">
+                    <div className="grid lg:grid-cols-12 gap-8">
+                      
+                      <div className="lg:col-span-7 space-y-6">
+                        <div className="flex flex-wrap justify-between items-center gap-3 border-b border-slate-800 pb-4 font-mono text-xs">
+                          <div>
+                            <span className="text-slate-400 text-[10px] uppercase block">SELECTED OPERATIONAL PROFILE</span>
+                            <h3 className="font-orbitron font-bold text-xl text-white mt-0.5">{currentScen.name}</h3>
+                          </div>
+                          <div className="bg-emerald-950/90 text-emerald-400 px-3.5 py-1.5 rounded border border-emerald-500/40 font-bold flex items-center gap-2">
+                            <i data-lucide="shield-alert" className="w-4 h-4"></i>
+                            <span>TACTICAL READINESS SCORE: {currentScen.readinessScore}%</span>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 font-mono text-xs">
+                          <span className="text-slate-400 uppercase font-bold block text-[11px]">IDENTIFIED OPERATIONAL THREAT:</span>
+                          <div className="bg-slate-950 p-3.5 rounded border border-red-500/30 text-slate-200 flex items-center gap-3">
+                            <i data-lucide="alert-triangle" className="w-5 h-5 text-red-400 shrink-0"></i>
+                            <span>{currentScen.threat}</span>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 font-mono text-xs">
+                          <span className="text-slate-400 uppercase font-bold block text-[11px]">SAFSHIKAN TACTICAL ADVANTAGE:</span>
+                          <div className="bg-slate-950 p-3.5 rounded border border-emerald-500/30 text-emerald-300 flex items-center gap-3">
+                            <i data-lucide="check-circle-2" className="w-5 h-5 text-emerald-400 shrink-0"></i>
+                            <span>{currentScen.tacticalAdvantage}</span>
+                          </div>
+                        </div>
+
+                        {/* Interactive Readiness Progress Bar */}
+                        <div className="space-y-2 font-mono text-xs pt-2">
+                          <div className="flex justify-between text-slate-300">
+                            <span>PLATFORM SURVIVABILITY & MISSION SUCCESS INDEX</span>
+                            <span className="font-bold text-sky-400">{currentScen.readinessScore}% OPTIMAL</span>
+                          </div>
+                          <div className="w-full h-3 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div 
+                              className="h-full bg-gradient-to-r from-blue-600 via-sky-400 to-emerald-400 rounded-full transition-all duration-700" 
+                              style={{ width: `${currentScen.readinessScore}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lg:col-span-5 bg-slate-950 p-6 rounded-lg border border-slate-800 font-mono text-xs space-y-4 flex flex-col justify-between">
+                        <div className="space-y-4">
+                          <div className="border-b border-slate-800 pb-3 flex justify-between items-center">
+                            <span className="font-orbitron font-bold text-sky-300 text-sm">RECOMMENDED TACTICAL ASSET</span>
+                            <span className="text-[10px] bg-blue-950 text-sky-400 px-2 py-0.5 rounded border border-blue-500/30">MATCHED</span>
+                          </div>
+
+                          <div className="bg-[#0b1326] p-4 rounded border border-blue-500/30 space-y-1">
+                            <span className="text-slate-400 text-[10px] block">DEPLOYED PLATFORM</span>
+                            <span className="font-orbitron font-bold text-base text-white block">{currentScen.recommendedPlatform}</span>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3">
+                            <div className="bg-[#0b1326] p-3 rounded border border-slate-800">
+                              <span className="text-slate-400 text-[10px] block">RAPID DEPLOYMENT</span>
+                              <span className="font-orbitron font-bold text-emerald-400 block mt-0.5">{currentScen.deployTime}</span>
+                            </div>
+                            <div className="bg-[#0b1326] p-3 rounded border border-slate-800">
+                              <span className="text-slate-400 text-[10px] block">C2 DATALINK</span>
+                              <span className="font-orbitron font-bold text-sky-400 block mt-0.5">{currentScen.datalink}</span>
+                            </div>
+                          </div>
+
+                          <div className="bg-[#0b1326] p-3 rounded border border-slate-800 space-y-1">
+                            <span className="text-slate-400 text-[10px] block">TACTICAL PAYLOAD LOADOUT</span>
+                            <span className="font-bold text-amber-300 block">{currentScen.payload}</span>
+                          </div>
+                        </div>
+
+                        <button 
+                          onClick={handleOpenCustomQuadRFP}
+                          className="w-full py-3.5 bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-400 hover:from-blue-500 hover:to-emerald-300 text-white font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-[0_0_20px_rgba(0,163,255,0.4)] flex items-center justify-center gap-2"
+                        >
+                          <i data-lucide="send" className="w-4 h-4"></i>
+                          <span>Request Scenario Tactical Specs</span>
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })()}
+
+            </div>
+          </section>
+
+          {/* AGRON Agriculture Spray Operations Central Command Portal */}
+          <section id="agron-portal" className="py-24 bg-[#050914] border-t border-emerald-900/40 relative">
+            
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 font-mono text-xs tracking-widest uppercase">
+                  <i data-lucide="sprout" className="w-3.5 h-3.5"></i>
+                  <span>CENTRAL SPRAY OPERATIONS PORTAL</span>
+                </div>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">AGRON AGRICULTURE COMMAND PORTAL</h2>
+                <p className="text-slate-300 text-sm font-sans">
+                  Centralized command system engineered for real-time monitoring of agricultural spray drone fleets (AGRON 10L, AGRON 30L & AGRON 50L), precision dosage control, field mapping, and daily acre telemetry.
+                </p>
+              </div>
+
+              <div className="mt-12 tactical-card-blue rounded-lg overflow-hidden border border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+                
+                {/* Portal Header Bar */}
+                <div className="bg-[#091520] px-4 py-3 border-b border-emerald-900/60 flex items-center justify-between font-mono text-xs">
+                  <div className="flex items-center gap-2 text-emerald-400 font-bold">
+                    <i data-lucide="radio" className="w-4 h-4 animate-pulse"></i>
+                    <span>AGRON CENTRAL COMMAND v4.8 // AGRICULTURE SPRAY NETWORK</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-xs">
+                    <span className="text-slate-400">TARGET DOSAGE: <strong className="text-white font-bold">{agronTelemetry.dosage}</strong></span>
+                    <span className="text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded border border-emerald-500/30">DISPATCH READY</span>
+                  </div>
+                </div>
+
+                {/* Main Command Display */}
+                <div className="grid lg:grid-cols-12 bg-slate-950">
+                  
+                  {/* Left Spray Field Operations Map & Visual */}
+                  <div className="lg:col-span-8 p-6 relative min-h-[400px] flex flex-col justify-between">
+                    <img src="./assets/agron_10l_catalog_optimized.jpg" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+                    
+                    {/* Telemetry Overlay Badges */}
+                    <div className="relative z-10 flex flex-wrap justify-between gap-3 font-mono text-xs">
+                      <div className="bg-[#0b1326]/90 p-3 rounded border border-emerald-500/40 text-emerald-300">
+                        <span className="text-slate-400 text-[10px] block">ACTIVE FIELD SECTOR</span>
+                        <span className="font-bold text-white">{agronTelemetry.field}</span>
+                      </div>
+                      <div className="bg-[#0b1326]/90 p-3 rounded border border-emerald-500/40 text-emerald-300 text-right">
+                        <span className="text-slate-400 text-[10px] block">DAILY COVERAGE TELEMETRY</span>
+                        <span className="font-bold text-emerald-400">{agronTelemetry.acresToday} / 336 ACRES GOAL</span>
+                      </div>
+                    </div>
+
+                    {/* Spray Nozzle Flow Rate & Radar Graphic */}
+                    <div className="relative z-10 my-6 grid sm:grid-cols-3 gap-3 font-mono text-xs">
+                      <div className="bg-black/80 p-3 rounded border border-slate-800 text-center">
+                        <span className="text-slate-400 text-[10px] block">SPRAY TANK CAPACITY</span>
+                        <span className="font-orbitron font-bold text-xl text-sky-400 mt-1 block">{agronTelemetry.tankLevel}</span>
+                      </div>
+                      <div className="bg-black/80 p-3 rounded border border-slate-800 text-center">
+                        <span className="text-slate-400 text-[10px] block">REAL-TIME FLOW RATE</span>
+                        <span className="font-orbitron font-bold text-xl text-emerald-400 mt-1 block">{agronTelemetry.flowRate}</span>
+                      </div>
+                      <div className="bg-black/80 p-3 rounded border border-slate-800 text-center">
+                        <span className="text-slate-400 text-[10px] block">TERRAIN RADAR CLEARANCE</span>
+                        <span className="font-orbitron font-bold text-xl text-amber-400 mt-1 block">2.5 METERS</span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Status Note */}
+                    <div className="relative z-10 bg-[#091520]/90 p-3 rounded border border-emerald-900/50 text-xs font-mono text-slate-300 flex items-center justify-between">
+                      <span className="flex items-center gap-2">
+                        <i data-lucide="check-circle-2" className="w-4 h-4 text-emerald-400"></i>
+                        <span>Centrifugal Atomizing Nozzles Drift Control: OPTIMAL</span>
+                      </span>
+                      <span className="text-emerald-400 font-bold">5 KM DUAL FREQUENCY LINK</span>
+                    </div>
+
+                  </div>
+
+                  {/* Right Operational Controls & Logs */}
+                  <div className="lg:col-span-4 p-6 font-mono text-xs space-y-4 border-l border-slate-800 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
+                        <span className="text-slate-300 font-bold uppercase flex items-center gap-1.5">
+                          <i data-lucide="terminal" className="w-4 h-4 text-emerald-400"></i>
+                          Spray Mission Console
+                        </span>
+                        <span className="text-[10px] text-emerald-400">LIVE FEED</span>
+                      </div>
+
+                      <div className="bg-black/90 p-3 rounded h-48 overflow-y-auto space-y-2 text-[11px] border border-slate-800">
+                        {logs.map((log, idx) => (
+                          <p key={idx} className={idx === 0 ? 'text-emerald-400 font-semibold' : 'text-slate-400'}>{log}</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Operations Action Buttons */}
+                    <div className="space-y-2 pt-2 border-t border-slate-800">
+                      <button 
+                        onClick={() => addLogMessage('DISPATCH: AGRON 50L initiated field spray route.')}
+                        className="w-full py-2.5 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 text-emerald-300 font-orbitron text-xs uppercase rounded transition-colors flex items-center justify-center gap-2"
+                      >
+                        <i data-lucide="play" className="w-3.5 h-3.5 text-emerald-400"></i>
+                        <span>Dispatch Automated Spray Mission</span>
+                      </button>
+
+                      <button 
+                        onClick={() => addLogMessage('RADAR: Terrain-following height lock re-calibrated.')}
+                        className="w-full py-2.5 bg-[#0b1326] hover:bg-[#121e3b] border border-blue-500/40 text-sky-300 font-orbitron text-xs uppercase rounded transition-colors flex items-center justify-center gap-2"
+                      >
+                        <i data-lucide="refresh-cw" className="w-3.5 h-3.5 text-sky-400"></i>
+                        <span>Calibrate Terrain Radar</span>
+                      </button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+
+          {/* Leadership Team Section */}
+          <section id="team" className="py-24 bg-[#050914] border-t border-blue-900/40">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-mono text-sky-400 uppercase tracking-widest">[LEADERSHIP DIRECTORATE]</span>
+                <h2 className="font-orbitron font-extrabold text-3xl sm:text-4xl text-white">EXECUTIVE MANAGEMENT</h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                {LEADERSHIP_TEAM.map((member, idx) => (
+                  <div key={idx} className="tactical-card-blue p-6 rounded-lg space-y-3 border border-blue-900/40">
+                    <div className="w-10 h-10 rounded bg-[#0b1326] border border-blue-500/40 flex items-center justify-center font-orbitron font-bold text-sky-400 text-sm">
+                      0{idx+1}
+                    </div>
+                    <h3 className="font-orbitron font-bold text-white text-lg">{member.name}</h3>
+                    <p className="text-xs font-mono text-sky-400">{member.role}</p>
+                    <p className="text-[11px] font-mono text-amber-400">{member.bg}</p>
+                    <p className="text-slate-300 text-xs font-sans leading-relaxed">{member.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Professional High-Tech Footer */}
+          <footer className="bg-[#03060c] border-t border-blue-900/50 pt-16 pb-12 text-slate-400 font-mono text-xs relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-900">
+                
+                {/* Col 1: Brand & Strategic Profile */}
+                <div className="lg:col-span-4 space-y-4">
+                  <a href="#" className="flex items-center gap-3 group">
+                    <div className="w-14 h-14 rounded-full bg-white p-2 flex items-center justify-center border border-sky-400 shadow-[0_0_22px_rgba(0,163,255,0.6)] group-hover:scale-105 transition-transform shrink-0">
+                      <img 
+                        src="./assets/logo_blue_transparent.png" 
+                        alt="Safshikan Logo" 
+                        className="w-full h-full object-contain"
+                        onError={(e) => { e.target.onerror=null; e.target.src='./assets/logo_blue.png'; }}
+                      />
+                    </div>
+                    <div>
+                      <span className="font-orbitron font-extrabold text-xl text-white tracking-wider block">SAFSHIKAN</span>
+                      <span className="text-[10px] text-sky-400 font-mono tracking-widest uppercase block">Aerospace & Defense Systems</span>
+                    </div>
+                  </a>
+
+                  <p className="text-slate-400 font-sans text-xs leading-relaxed max-w-sm">
+                    Safshikan is Pakistan's leading defense aerospace and autonomous unmanned aerial vehicle (UAV) engineering firm. Manufacturing military-grade tactical drones, BVLOS platforms, and the AGRON Ground Control Command OS.
+                  </p>
+
+                  {/* Social Media Links Strip */}
+                  <div className="pt-2">
+                    <span className="text-[10px] text-slate-500 uppercase tracking-widest block mb-2.5 font-bold">Connect With Safshikan</span>
+                    <div className="flex items-center gap-3">
+                      {/* Instagram */}
+                      <a 
+                        href="https://instagram.com/safshikan" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
+                        title="Instagram"
+                      >
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                      </a>
+
+                      {/* Facebook */}
+                      <a 
+                        href="https://facebook.com/safshikan" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
+                        title="Facebook"
+                      >
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                          <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/>
+                        </svg>
+                      </a>
+
+                      {/* TikTok */}
+                      <a 
+                        href="https://tiktok.com/@safshikan" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
+                        title="TikTok"
+                      >
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.96-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.32 1.52-1.33 2.52-.04 1.05.47 2.08 1.34 2.64 1.08.73 2.56.71 3.61-.07.72-.52 1.17-1.36 1.22-2.25.07-3.56.03-7.12.04-10.68z"/>
+                        </svg>
+                      </a>
+
+                      {/* LinkedIn */}
+                      <a 
+                        href="https://linkedin.com/company/safshikan" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-9 h-9 rounded bg-[#0b1326] border border-slate-800 text-slate-300 hover:text-sky-400 hover:border-sky-500/50 flex items-center justify-center transition-all hover:scale-110 shadow-[0_0_10px_rgba(0,163,255,0.2)]"
+                        title="LinkedIn"
+                      >
+                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Col 2: Defense UAV Platforms */}
+                <div className="lg:col-span-3 space-y-3 font-sans">
+                  <h4 className="font-orbitron font-bold text-sm text-white uppercase tracking-wider">
+                    UAV Platforms
+                  </h4>
+                  <ul className="space-y-2 text-xs">
+                    <li><a href="#products" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> The Grim Reaper UAS</a></li>
+                    <li><a href="#products" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> BVLOS Heavy Payload (16kg)</a></li>
+                    <li><a href="#products" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> Sentinel Vigilance Pro</a></li>
+                    <li><a href="#products" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> Edith Sovran 10" Series</a></li>
+                    <li><a href="#products" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> 5" & 7" FPV Strike Platforms</a></li>
+                  </ul>
+                </div>
+
+                {/* Col 3: Portals & Systems */}
+                <div className="lg:col-span-2 space-y-3 font-sans">
+                  <h4 className="font-orbitron font-bold text-sm text-white uppercase tracking-wider">
+                    Software & Portals
+                  </h4>
+                  <ul className="space-y-2 text-xs">
+                    <li><a href="#agron-portal" className="hover:text-emerald-400 transition-colors flex items-center gap-1"><span>&gt;</span> AGRON Spray Command</a></li>
+                    <li><a href="#simulator" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> Client Spec Collector</a></li>
+                    <li><a href="#team" className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> Executive Leadership</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setPrivacyOpen(true); }} className="hover:text-sky-400 transition-colors flex items-center gap-1"><span>&gt;</span> Defense Data Policy</a></li>
+                  </ul>
+                </div>
+
+                {/* Col 4: Directorate Contact */}
+                <div className="lg:col-span-3 space-y-3 font-mono">
+                  <h4 className="font-orbitron font-bold text-sm text-white uppercase tracking-wider">
+                    Directorate Contact
+                  </h4>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-start gap-2.5 text-slate-300">
+                      <i data-lucide="map-pin" className="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                      <span>Office No. 18, Aplha 16, NASTP Industrial Innovative Enclave, Rawalpindi</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-slate-300">
+                      <i data-lucide="mail" className="w-4 h-4 text-sky-400 shrink-0"></i>
+                      <a href="mailto:info.safshikan@gmail.com" className="hover:text-sky-400">info.safshikan@gmail.com</a>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-slate-300">
+                      <i data-lucide="phone" className="w-4 h-4 text-emerald-400 shrink-0"></i>
+                      <a href="https://wa.me/923213630768" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400">+92 321 3630768</a>
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button 
+                      onClick={() => setRfpOpen(true)}
+                      className="w-full py-2.5 bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-orbitron font-bold text-xs uppercase tracking-wider rounded transition-all shadow-[0_0_15px_rgba(0,163,255,0.3)] flex items-center justify-center gap-2"
+                    >
+                      <i data-lucide="terminal" className="w-3.5 h-3.5"></i>
+                      <span>Submit Encrypted RFP</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Bottom Copyright & Legal Links Bar */}
+              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-[11px] text-slate-500 font-mono">
+                <p>© {new Date().getFullYear()} SAFSHIKAN AEROSPACE & DEFENSE SYSTEMS. ALL RIGHTS RESERVED.</p>
+                
+                <div className="flex flex-wrap items-center gap-4">
+                  <button onClick={() => setPrivacyOpen(true)} className="hover:text-sky-400 transition-colors">Privacy Policy</button>
+                  <span>•</span>
+                  <button onClick={() => setPrivacyOpen(true)} className="hover:text-sky-400 transition-colors">NDA & Security Protocol</button>
+                  <span>•</span>
+                  <span className="text-emerald-400 font-bold flex items-center gap-1">
+                    <i data-lucide="shield-check" className="w-3.5 h-3.5"></i>
+                    NASTP ALPHA QUALIFIED
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </footer>
+
+          {/* Privacy & Security Policy Modal */}
+          {privacyOpen && (
+            <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur flex items-center justify-center p-4">
+              <div className="tactical-card-blue max-w-xl w-full p-6 sm:p-8 rounded-lg space-y-4 max-h-[90vh] overflow-y-auto border border-blue-500/60 font-mono text-xs">
+                <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <div>
+                    <span className="text-[10px] text-sky-400 uppercase">[DEFENSE COMPLIANCE PROTOCOL]</span>
+                    <h3 className="font-orbitron font-bold text-white text-xl">SECURITY & PRIVACY POLICY</h3>
+                  </div>
+                  <button onClick={() => setPrivacyOpen(false)} className="text-slate-400 hover:text-white text-xl">✕</button>
+                </div>
+
+                <div className="space-y-3 text-slate-300 font-sans text-xs leading-relaxed">
+                  <p>
+                    <strong>Safshikan Aerospace & Defense Systems</strong> enforces military-grade data protection standards for all client performance specifications, defense inquiries, and custom quadcopter requirements.
+                  </p>
+
+                  <div className="bg-slate-950 p-4 rounded border border-slate-800 space-y-2 font-mono text-[11px]">
+                    <span className="text-sky-400 font-bold block uppercase">1. Non-Disclosure & Classified Spec Handling</span>
+                    <p className="text-slate-400">All technical requirements, custom payload requests, and organization details transmitted through this portal are treated as confidential defense communications and governed under explicit non-disclosure protocols.</p>
+                  </div>
+
+                  <div className="bg-slate-950 p-4 rounded border border-slate-800 space-y-2 font-mono text-[11px]">
+                    <span className="text-emerald-400 font-bold block uppercase">2. Encrypted Data Transmission</span>
+                    <p className="text-slate-400">Inquiries and telemetry feedback sent to Safshikan are processed using encrypted SSL/TLS layers with zero third-party data tracking or external data monetization.</p>
+                  </div>
+
+                  <div className="bg-slate-950 p-4 rounded border border-slate-800 space-y-2 font-mono text-[11px]">
+                    <span className="text-amber-400 font-bold block uppercase">3. NASTP Alpha Facility Compliance</span>
+                    <p className="text-slate-400">Safshikan operates within NASTP Alpha (Rawalpindi), maintaining strict compliance with national aerospace testing, avionics calibration, and defense production standards.</p>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex justify-end">
+                  <button 
+                    onClick={() => setPrivacyOpen(false)}
+                    className="px-5 py-2.5 bg-sky-500 hover:bg-sky-400 text-black font-orbitron font-bold text-xs uppercase rounded transition-colors"
+                  >
+                    Acknowledge & Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Modal Specs Inspector */}
+          {selectedDrone && (
+            <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur flex items-center justify-center p-4">
+              <div className="tactical-card-blue max-w-2xl w-full p-6 sm:p-8 rounded-lg space-y-4 max-h-[90vh] overflow-y-auto border border-blue-500/60">
+                <div className="flex justify-between border-b border-slate-800 pb-3">
+                  <div>
+                    <span className="text-[10px] font-mono text-sky-400 uppercase">[{selectedDrone.sector}]</span>
+                    <h3 className="font-orbitron font-bold text-white text-2xl">{selectedDrone.name}</h3>
+                  </div>
+                  <button onClick={() => setSelectedDrone(null)} className="text-slate-400 hover:text-white text-xl">✕</button>
+                </div>
+
+                <div className="aspect-video bg-slate-950 rounded overflow-hidden">
+                  <img src={selectedDrone.image} className="w-full h-full object-cover" />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-xs font-mono bg-slate-950 p-4 rounded border border-slate-800">
+                  <div><span className="text-slate-500 block">PAYLOAD</span> <span className="text-white font-bold">{selectedDrone.specs.payload}</span></div>
+                  <div><span className="text-slate-500 block">RANGE / COVERAGE</span> <span className="text-sky-400 font-bold">{selectedDrone.specs.coverage || selectedDrone.specs.range}</span></div>
+                  {selectedDrone.specs.endurance && <div><span className="text-slate-500 block">FLIGHT ENDURANCE</span> <span className="text-amber-400 font-bold">{selectedDrone.specs.endurance}</span></div>}
+                  {selectedDrone.specs.sensors && <div><span className="text-slate-500 block">SENSORS / CAMERA</span> <span className="text-emerald-400 font-bold">{selectedDrone.specs.sensors}</span></div>}
+                </div>
+
+                <div>
+                  <h4 className="font-orbitron text-xs text-sky-400 uppercase font-bold mb-2">Official Catalog Specs & Features</h4>
+                  <ul className="space-y-1.5 text-xs text-slate-300 font-mono">
+                    {selectedDrone.features.map((feat, idx) => (
+                      <li key={idx} className="flex items-center gap-2">
+                        <span className="text-emerald-400">✓</span>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <button onClick={() => { setSelectedDrone(null); setRfpOpen(true); }} className="w-full py-3 bg-[#0077ff] hover:bg-sky-400 text-white font-orbitron font-bold text-xs uppercase rounded transition-colors">
+                  Request Technical Data Sheet
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Modal RFP */}
+          {rfpOpen && (
+            <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur flex items-center justify-center p-4">
+              <div className="tactical-card-blue max-w-lg w-full p-6 rounded-lg space-y-4">
+                <div className="flex justify-between border-b border-slate-800 pb-2">
+                  <h3 className="font-orbitron font-bold text-white text-xl">DEFENSE & CIVIL INQUIRY PORTAL</h3>
+                  <button onClick={() => setRfpOpen(false)} className="text-slate-400">✕</button>
+                </div>
+                {submitted ? (
+                  <div className="text-center py-6 space-y-3 font-mono">
+                    <p className="text-emerald-400 font-bold text-lg">TRANSMITTED SECURELY</p>
+                    <p className="text-xs text-slate-300">DISPATCH ID: #SF-RFP-2026-904</p>
+                    <button onClick={() => { setSubmitted(false); setRfpOpen(false); }} className="px-4 py-2 bg-sky-500 text-black font-bold text-xs uppercase rounded">Close</button>
+                  </div>
+                ) : (
+                  <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-3 font-sans text-xs">
+                    <div>
+                      <label className="block text-slate-300 font-mono mb-1">Official Name *</label>
+                      <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full p-2 bg-slate-950 border border-slate-800 rounded text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 font-mono mb-1">Agency / Organization *</label>
+                      <input required type="text" value={formData.agency} onChange={e => setFormData({...formData, agency: e.target.value})} className="w-full p-2 bg-slate-950 border border-slate-800 rounded text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 font-mono mb-1">Email *</label>
+                      <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full p-2 bg-slate-950 border border-slate-800 rounded text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 font-mono mb-1">Phone / WhatsApp *</label>
+                      <input required type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full p-2 bg-slate-950 border border-slate-800 rounded text-white" />
+                    </div>
+                    <div>
+                      <label className="block text-slate-300 font-mono mb-1">Client Desired Performance Specs</label>
+                      <textarea rows="4" value={formData.comments} onChange={e => setFormData({...formData, comments: e.target.value})} className="w-full p-2 bg-slate-950 border border-slate-800 rounded text-white font-mono text-[11px]" />
+                    </div>
+                    <button type="submit" className="w-full py-3 bg-[#0077ff] text-white font-orbitron font-bold uppercase rounded mt-2 hover:bg-sky-400 transition-colors">
+                      Transmit Encrypted Request
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Floating WhatsApp Direct Contact Action Button */}
+          <a
+            href="https://wa.me/923213630768?text=Hello%20Safshikan%20Aerospace%2C%20I%20have%20an%20inquiry%20regarding%20UAV%20systems"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-50 group flex items-center gap-3 p-3.5 sm:px-4 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-mono text-xs shadow-[0_0_25px_rgba(37,211,102,0.6)] hover:shadow-[0_0_35px_rgba(37,211,102,0.9)] transition-all duration-300 hover:scale-105"
+            aria-label="Direct WhatsApp Contact"
+            title="Chat on WhatsApp (+92 321 3630768)"
+          >
+            <div className="relative flex items-center justify-center">
+              <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-white border-2 border-[#25D366] rounded-full animate-ping"></span>
+            </div>
+            <span className="hidden sm:inline font-orbitron font-bold tracking-wider uppercase text-[11px] whitespace-nowrap">WhatsApp Chat</span>
+          </a>
+
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+{
+  "analysis": [
+    {
+      "filename": "grim_reaper.jpg",
+      "name": "Grim Reaper UAS",
+      "category": "defense",
+      "original_size": "16320x12240",
+      "aspect_ratio": 1.333,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.267,
+      "file_size_kb": 28708.7,
+      "brightness": 49.6,
+      "contrast_proxy": 59.0,
+      "channel_means_rgb": [
+        49.7,
+        50.1,
+        48.9
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "bvlos_catalog_actual.png",
+      "name": "BVLOS Heavy-Lift",
+      "category": "defense",
+      "original_size": "1920x788",
+      "aspect_ratio": 2.437,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.837,
+      "file_size_kb": 3771.5,
+      "brightness": 106.0,
+      "contrast_proxy": 53.7,
+      "channel_means_rgb": [
+        133.2,
+        105.3,
+        79.6
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "sentinel_catalog.png",
+      "name": "Sentinel Vigilance Pro",
+      "category": "defense",
+      "original_size": "1840x788",
+      "aspect_ratio": 2.335,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.735,
+      "file_size_kb": 366.4,
+      "brightness": 203.4,
+      "contrast_proxy": 59.6,
+      "channel_means_rgb": [
+        204.0,
+        203.2,
+        203.2
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "sovraan_1_catalog.png",
+      "name": "Edith Sovran-I",
+      "category": "defense",
+      "original_size": "1600x810",
+      "aspect_ratio": 1.975,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.375,
+      "file_size_kb": 2508.5,
+      "brightness": 154.5,
+      "contrast_proxy": 64.8,
+      "channel_means_rgb": [
+        152.5,
+        156.4,
+        154.5
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "sovraan_2_catalog.png",
+      "name": "Edith Sovran-II",
+      "category": "defense",
+      "original_size": "2000x743",
+      "aspect_ratio": 2.692,
+      "target_ratio": 1.6,
+      "ratio_diff": 1.092,
+      "file_size_kb": 3499.5,
+      "brightness": 128.5,
+      "contrast_proxy": 54.4,
+      "channel_means_rgb": [
+        137.6,
+        137.4,
+        110.5
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "sovraan_3_catalog.png",
+      "name": "Edith Sovran-III",
+      "category": "defense",
+      "original_size": "1440x810",
+      "aspect_ratio": 1.778,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.178,
+      "file_size_kb": 956.5,
+      "brightness": 165.5,
+      "contrast_proxy": 66.0,
+      "channel_means_rgb": [
+        162.2,
+        167.2,
+        167.0
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "7inch_digital_catalog.png",
+      "name": "7-Inch Digital FPV",
+      "category": "defense",
+      "original_size": "1480x765",
+      "aspect_ratio": 1.935,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.335,
+      "file_size_kb": 1187.9,
+      "brightness": 74.4,
+      "contrast_proxy": 56.4,
+      "channel_means_rgb": [
+        78.3,
+        73.1,
+        71.9
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "7inch_analog_catalog.png",
+      "name": "7-Inch Analog FPV",
+      "category": "defense",
+      "original_size": "1240x810",
+      "aspect_ratio": 1.531,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.069,
+      "file_size_kb": 1825.3,
+      "brightness": 74.7,
+      "contrast_proxy": 64.5,
+      "channel_means_rgb": [
+        66.0,
+        72.8,
+        85.3
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "5inch_digital_catalog.png",
+      "name": "5-Inch Digital FPV",
+      "category": "defense",
+      "original_size": "1240x743",
+      "aspect_ratio": 1.669,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.069,
+      "file_size_kb": 2098.6,
+      "brightness": 90.6,
+      "contrast_proxy": 58.7,
+      "channel_means_rgb": [
+        96.6,
+        92.3,
+        82.9
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "5inch_analog_catalog.png",
+      "name": "5-Inch Analog FPV",
+      "category": "defense",
+      "original_size": "1520x833",
+      "aspect_ratio": 1.825,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.225,
+      "file_size_kb": 3087.0,
+      "brightness": 100.1,
+      "contrast_proxy": 59.0,
+      "channel_means_rgb": [
+        120.7,
+        132.9,
+        46.6
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "agron_10l_catalog.png",
+      "name": "AGRON 10L",
+      "category": "agriculture",
+      "original_size": "1920x878",
+      "aspect_ratio": 2.187,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.587,
+      "file_size_kb": 4100.3,
+      "brightness": 118.7,
+      "contrast_proxy": 53.6,
+      "channel_means_rgb": [
+        141.0,
+        124.1,
+        91.0
+      ],
+      "mode": "RGB"
+    },
+    {
+      "filename": "agron_30l_catalog.png",
+      "name": "AGRON 30L / 50L",
+      "category": "agriculture",
+      "original_size": "1920x878",
+      "aspect_ratio": 2.187,
+      "target_ratio": 1.6,
+      "ratio_diff": 0.587,
+      "file_size_kb": 3750.9,
+      "brightness": 86.9,
+      "contrast_proxy": 45.8,
+      "channel_means_rgb": [
+        102.0,
+        106.4,
+        52.4
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "optimization": [
+    {
+      "source": "grim_reaper.jpg",
+      "output_file": "grim_reaper_optimized.jpg",
+      "original_dimensions": "16320x12240",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 698.4
+    },
+    {
+      "source": "bvlos_catalog_actual.png",
+      "output_file": "bvlos_catalog_actual_optimized.jpg",
+      "original_dimensions": "1920x788",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 617.0
+    },
+    {
+      "source": "sentinel_catalog.png",
+      "output_file": "sentinel_catalog_optimized.jpg",
+      "original_dimensions": "1840x788",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 127.0
+    },
+    {
+      "source": "sovraan_1_catalog.png",
+      "output_file": "sovraan_1_catalog_optimized.jpg",
+      "original_dimensions": "1600x810",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 494.8
+    },
+    {
+      "source": "sovraan_2_catalog.png",
+      "output_file": "sovraan_2_catalog_optimized.jpg",
+      "original_dimensions": "2000x743",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 517.9
+    },
+    {
+      "source": "sovraan_3_catalog.png",
+      "output_file": "sovraan_3_catalog_optimized.jpg",
+      "original_dimensions": "1440x810",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 243.4
+    },
+    {
+      "source": "7inch_digital_catalog.png",
+      "output_file": "7inch_digital_catalog_optimized.jpg",
+      "original_dimensions": "1480x765",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 322.2
+    },
+    {
+      "source": "7inch_analog_catalog.png",
+      "output_file": "7inch_analog_catalog_optimized.jpg",
+      "original_dimensions": "1240x810",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 428.1
+    },
+    {
+      "source": "5inch_digital_catalog.png",
+      "output_file": "5inch_digital_catalog_optimized.jpg",
+      "original_dimensions": "1240x743",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 526.4
+    },
+    {
+      "source": "5inch_analog_catalog.png",
+      "output_file": "5inch_analog_catalog_optimized.jpg",
+      "original_dimensions": "1520x833",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 541.5
+    },
+    {
+      "source": "agron_10l_catalog.png",
+      "output_file": "agron_10l_catalog_optimized.jpg",
+      "original_dimensions": "1920x878",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 792.1
+    },
+    {
+      "source": "agron_30l_catalog.png",
+      "output_file": "agron_30l_catalog_optimized.jpg",
+      "original_dimensions": "1920x878",
+      "optimized_dimensions": "1600x1000",
+      "output_size_kb": 558.5
+    }
+  ],
+  "config": {
+    "target_width": 1600,
+    "target_height": 1000,
+    "target_aspect_ratio": "16:10",
+    "contrast_enhancement": "autocontrast + 1.08x boost",
+    "color_saturation": "1.10x boost",
+    "sharpening": "UnsharpMask r=1.5 p=80 t=3",
+    "color_grading": {
+      "defense": "Cool blue-steel (R*0.96, G*0.98, B*1.04) + shadow lift",
+      "agriculture": "Warm earth (R*1.02, G*1.04, B*0.96) + midtone boost"
+    }
+  }
+}
