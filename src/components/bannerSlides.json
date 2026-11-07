@@ -1,7 +1,7 @@
 [
   {
     "name": "The Grim Reaper UAS",
-    "image": "/assets/grim_reaper_optimized.jpg",
+    "image": "/assets/grim_Banner.jpg",
     "background": "/assets/banner-backgrounds/01.png"
   },
   {
@@ -21,7 +21,7 @@
   },
   {
     "name": "Edith Sovran II",
-    "image": "/assets/sovraan_2_catalog_optimized.jpg",
+    "image": "/assets/sovraan_2_banner.jpg",
     "background": "/assets/banner-backgrounds/05.png"
   },
   {
