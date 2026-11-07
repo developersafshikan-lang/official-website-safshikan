@@ -126,7 +126,7 @@ export default function Footer({ onOpenRfp }) {
               <div className="space-y-2 text-xs">
                 <div className="flex items-start gap-2.5 text-slate-300">
                   <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                  <span>Office No. 18, Aplha 16, Rawalpindi, Pakistan</span>
+                  <span>Office No. 18, Aplha 16, NASTP Industrial Innovative Enclave, Rawalpindi</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-300">
                   <Mail className="w-4 h-4 text-sky-400 shrink-0" />
