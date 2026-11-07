@@ -1,0 +1,57 @@
+[
+  {
+    "name": "The Grim Reaper UAS",
+    "image": "/assets/grim_reaper_optimized.jpg",
+    "background": "/assets/banner-backgrounds/01.png"
+  },
+  {
+    "name": "High Payload Delivery",
+    "image": "/assets/banner-three/1-image.png",
+    "background": "/assets/banner-backgrounds/02.png"
+  },
+  {
+    "name": "Sentinel Vigilance Pro",
+    "image": "/assets/banner-three/2-image.png",
+    "background": "/assets/banner-backgrounds/03.png"
+  },
+  {
+    "name": "Edith Sovran I",
+    "image": "/assets/banner-industry/edith-one-v2.png",
+    "background": "/assets/banner-backgrounds/04.png"
+  },
+  {
+    "name": "Edith Sovran II",
+    "image": "/assets/sovraan_2_catalog_optimized.jpg",
+    "background": "/assets/banner-backgrounds/05.png"
+  },
+  {
+    "name": "Edith Sovran III",
+    "image": "/assets/banner-three/3-image.png",
+    "background": "/assets/banner-backgrounds/06.png"
+  },
+  {
+    "name": "Building Cleaning Drone",
+    "image": "/assets/banner-industry/building-cleaning.png",
+    "background": "/assets/banner-backgrounds/07.png"
+  },
+  {
+    "name": "Medical Aid Delivery Drone",
+    "image": "/assets/banner-industry/medical-aid-delivery.png",
+    "background": "/assets/banner-backgrounds/08.png"
+  },
+  {
+    "name": "Fire Extinguisher Drone",
+    "image": "/assets/banner-industry/fire-extinguisher.png",
+    "background": "/assets/banner-backgrounds/09.png"
+  },
+  {
+    "name": "Heavy Lifting Drone",
+    "image": "/assets/banner-industry/heavy-lifting-v2.png",
+    "background": "/assets/banner-backgrounds/10.png"
+  },
+  {
+    "name": "Water Rescue Drone",
+    "image": "/assets/banner-industry/water-rescue-v2.png",
+    "background": "/assets/banner-backgrounds/11.png"
+  }
+]

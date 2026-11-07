@@ -1,0 +1,262 @@
+/* Full-page extension of the selected cinematic Safshikan design. */
+:root {
+  --theme-ink: #e8f4fc;
+  --theme-muted: #a9bdcc;
+  --theme-line: rgba(152, 206, 234, .18);
+  --theme-panel: #0b202e;
+  --theme-ease: cubic-bezier(.2, .75, .25, 1);
+}
+.safshikan-site { overflow: clip; }
+.safshikan-site main > .site-section {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(76px, 8vw, 128px);
+  background: #06131c;
+  border-color: var(--theme-line);
+}
+.safshikan-site main > .site-section:nth-of-type(even) { background: #081b27; }
+.site-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 90% 0%, #45bcff0b, transparent 55%);
+}
+.section-shell { position: relative; }
+.site-section h2 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 400;
+  line-height: 1.09;
+  letter-spacing: -.055em;
+  color: var(--theme-ink);
+  margin-top: 20px;
+  margin-bottom: 22px;
+}
+.section-title-accent { color: var(--home-accent); }
+.site-section h3 { font-family: Inter, Arial, sans-serif; font-weight: 500; letter-spacing: -.025em; }
+.site-section .das-badge {
+  background: none;
+  border: 0;
+  padding: 0;
+  gap: 12px;
+  color: #afd4e7;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  line-height: 1.5;
+}
+.site-section .das-badge-dot { width: 26px; height: 1px; border-radius: 0; flex-shrink: 0; }
+.site-section .text-slate-400, .site-footer .text-slate-400 { color: var(--theme-muted); }
+.site-section .text-slate-500, .site-footer .text-slate-500 { color: #91aabc; }
+.site-section .text-blue-400, .site-section .text-emerald-400, .site-section .text-purple-400 { color: var(--home-accent); }
+.site-section .font-mono, .site-footer .font-mono { font-family: Inter, Arial, sans-serif; }
+.site-section p { line-height: 1.8; }
+.site-section > .section-shell > .text-center { max-width: 860px; margin-bottom: 56px; }
+.site-section > .section-shell > .text-center > p { max-width: 660px; margin-inline: auto; }
+
+/* The catalogue has its own full-width title and a separate filter rail. */
+.fleet-heading { display: block; margin-bottom: 38px; }
+.fleet-heading > div:first-child { display: grid; grid-template-columns: 1.2fr 1fr; align-items: end; column-gap: 64px; }
+.fleet-heading .das-badge { grid-column: 1 / -1; }
+.fleet-heading h2 { max-width: 580px; margin-bottom: 0; }
+.fleet-heading p { max-width: 480px; font-size: 14px; margin: 0 0 2px; }
+.fleet-filters { gap: 9px; margin-top: 37px; padding-top: 27px; border-top: 1px solid var(--theme-line); }
+.fleet-filters button { border: 1px solid #244354; border-radius: 3px; background: #0b202d; color: #c2d4df; padding: 10px 14px; font-size: 11px; min-height: 40px; box-shadow: none; }
+.fleet-filters button[aria-pressed='true'] { background: #9addfb; color: #051722; border-color: #c7f0ff; }
+.fleet-filters button:hover { border-color: #9addfb; }
+.fleet-filters::-webkit-scrollbar { height: 4px; }
+.fleet-filters::-webkit-scrollbar-track { background: #0b202d; }
+.fleet-filters::-webkit-scrollbar-thumb { background: #456b80; border-radius: 2px; }
+.fleet-grid { gap: 28px; align-items: stretch; }
+.fleet-item { min-width: 0; display: flex; }
+.safshikan-site .fleet-card {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+  background: linear-gradient(150deg, #102938, #081b27 70%);
+  border: 1px solid #284453;
+  border-radius: 5px;
+  overflow: hidden;
+  transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform .4s var(--theme-ease), border-color .4s, box-shadow .4s, background .4s;
+}
+.fleet-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(420px circle at var(--glow-x, 50%) var(--glow-y, 20%), #94dfff12, transparent 70%);
+  transition: opacity .4s;
+}
+.fleet-media { background: #06121c; aspect-ratio: 16 / 11; }
+.fleet-media::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, #081b27bd, transparent 35%); }
+.fleet-media img { transition: transform .75s var(--theme-ease), filter .6s; transform: scale(1); filter: saturate(.86); }
+.fleet-media > div { z-index: 1; max-width: calc(100% - 28px); border-radius: 2px; border-color: #90cdec45; background: #05121cd9; color: #d3e6f0; font-size: 9px; line-height: 1.5; padding: 7px 9px; }
+.fleet-index { position: absolute; z-index: 1; bottom: 17px; left: 23px; color: #dfedf7; font-size: 11px; letter-spacing: .13em; }
+.fleet-body { padding: 26px 24px 24px; gap: 20px; }
+.fleet-body > * + * { margin-top: 0; }
+.fleet-copy h3 { font-size: 21px; line-height: 1.25; color: #eaf6fd; transition: color .35s, transform .55s var(--theme-ease); }
+.fleet-copy p { font-size: 12px; line-height: 1.85; color: #a9bdca; -webkit-line-clamp: 3; transition: transform .6s .04s var(--theme-ease), color .4s; }
+.fleet-specs { border-top-color: #a4d5ed26; padding-top: 17px; font-family: Inter, Arial, sans-serif; font-size: 10px; transition: border-color .4s; }
+.fleet-specs > div { align-items: start; gap: 16px; padding-block: 3px; }
+.fleet-specs > div > span:first-child { flex-shrink: 0; }
+.fleet-specs > div > span:last-child { text-align: right; font-weight: 400; overflow-wrap: anywhere; }
+.fleet-actions { gap: 8px; }
+.fleet-actions > button { border-radius: 3px; min-height: 44px; padding: 11px 10px; font-size: 10px; line-height: 1.4; }
+.fleet-actions > button:first-child { display: flex; justify-content: space-between; align-items: center; gap: 8px; background: #071923; border: 1px solid #4a7388; color: #d8ebf7; }
+.fleet-arrow { width: 15px; height: 15px; flex-shrink: 0; transition: transform .35s; }
+.site-section button[class*='bg-blue-600'], .site-modal button[class*='bg-blue-600'] { color: #061723; background: linear-gradient(115deg, #a4e4ff, #69c5f0); border-color: #ade5ff; border-radius: 3px; box-shadow: none; }
+.site-section button, .site-modal button { transition: background .25s, border-color .25s, color .25s, transform .25s; }
+.site-section button[class*='bg-blue-600']:hover, .site-modal button[class*='bg-blue-600']:hover { background: #c7efff; }
+.safshikan-site .fleet-card:focus-within { border-color: #8bd7fa; box-shadow: 0 15px 45px #0003; }
+
+/* Engineering, feature, company and contact surfaces share one material. */
+.theme-panel, .site-section [class*='bg-[#0F172A]'], .site-section [class*='bg-[#131D33]'] {
+  position: relative;
+  border-color: #a4d5ed26;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #102a3a, #0a1e2c 70%);
+  transition: border-color .4s, box-shadow .4s, transform .45s var(--theme-ease);
+}
+.site-section .bg-slate-900 { background-color: #071923; }
+.site-section .border-slate-800 { border-color: #a4d5ed26; }
+.service-card { padding: 29px 30px 29px 34px; overflow: hidden; }
+.service-card::before, .company-card::before, .leadership-card::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 2px; background: #83d3fa; transform: scaleY(0); transform-origin: bottom; transition: transform .5s var(--theme-ease); }
+.service-card > div:first-child { gap: 16px; align-items: start; }
+.service-card > div:first-child > span:first-child { font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+.service-card > div:first-child > span:last-child { flex-shrink: 0; background: #7bc6e30d; border: 1px solid #8cd3ee26; border-radius: 2px; font-size: 8px; padding: 4px 6px; }
+.service-card h3 { font-size: 23px; line-height: 1.25; transition: color .3s, transform .4s; }
+.service-card p { font-size: 12px; color: #afc1cc; }
+.service-card > div:last-child { padding-top: 17px; margin-top: 20px; }
+.service-card > div:last-child > div { align-items: start; font-size: 11px; line-height: 1.7; }
+.service-card > div:last-child svg { margin-top: 3px; }
+.readiness-options { gap: 14px; }
+.readiness-option { border-radius: 4px; text-align: left; padding: 25px; }
+.readiness-option[aria-pressed='true'] { background: #153448; border-color: #85cceb; box-shadow: inset 0 2px #85cceb; }
+.readiness-option h3 { font-size: 18px; }
+.readiness-detail { padding: 40px; border-radius: 5px; }
+.readiness-detail [class*='bg-slate-900'] { padding: 22px 18px; border-radius: 3px; }
+.readiness-detail [class*='bg-slate-900'] > div:last-child { color: #a9e4ff; font-size: 21px; font-weight: 400; margin-top: 9px; }
+.section-configurator input[type='range'] { accent-color: #8cdbff; }
+.section-configurator button:not([class*='bg-blue-600']) { background: #071923; border-color: #8cbed02e; border-radius: 3px; }
+.section-configurator [class*='flex justify-between'] { gap: 12px; }
+.section-configurator [class*='flex justify-between'] > span:last-child { text-align: right; }
+.section-about::before { background: linear-gradient(90deg, #06131cf2, #06131ce3), url('/assets/home-beyond.webp') center / cover; }
+.company-card { padding: 27px; overflow: hidden; }
+.company-card h3 { font-size: 21px; line-height: 1.25; padding-block: 7px; }
+.company-card > div:first-child { font-size: 9px; letter-spacing: .12em; }
+.leadership-grid { gap: 0; border-top: 1px solid var(--theme-line); border-bottom: 1px solid var(--theme-line); }
+.site-section .leadership-card { padding: 30px 24px; border: 0; border-right: 1px solid var(--theme-line); border-radius: 0; background: #09202bb5; overflow: hidden; }
+.leadership-card:last-child { border-right: 0; }
+.leadership-card > div:first-child { font-size: 19px; font-weight: 500; margin-bottom: 12px; }
+.leadership-card > div:nth-child(2) { color: #9dddf8; }
+.section-contact::before { background: radial-gradient(ellipse at 10% 10%, #0a3b4f88, transparent 65%); }
+.section-contact h2 { max-width: 540px; }
+.section-contact .contact-details { padding-top: 27px; margin-top: 32px; }
+.contact-details > div { padding-block: 8px; }
+.contact-details > div > div:first-child { font-size: 9px; letter-spacing: .17em; margin-bottom: 8px; }
+.contact-details a { display: inline-block; font-size: 19px; font-weight: 400; overflow-wrap: anywhere; }
+.contact-panel { padding: 38px; }
+.contact-panel h3 { font-size: 23px; line-height: 1.35; padding-bottom: 23px; margin-bottom: 25px; }
+.site-section label, .site-modal label { font-size: 10px; letter-spacing: .03em; margin-bottom: 8px; }
+.site-section input:not([type='range']), .site-section textarea, .site-modal input, .site-modal textarea { background: #061923; border-color: #315064; border-radius: 3px; min-height: 45px; padding: 13px; }
+.site-section input::placeholder, .site-section textarea::placeholder { color: #7f9aaa; }
+.site-section input:focus, .site-section textarea:focus, .site-modal input:focus, .site-modal textarea:focus { border-color: #9adfff; }
+.contact-panel form { display: grid; gap: 18px; }
+.contact-panel form > * + * { margin-top: 0; }
+.contact-panel button[type='submit'] { min-height: 49px; margin-top: 7px; }
+.site-footer { position: relative; background: #040f17; border-top: 1px solid #2b4b5d; padding-top: 74px; padding-bottom: 34px; }
+.footer-wordmark { font-size: clamp(44px, 10.5vw, 156px); font-family: Inter, Arial, sans-serif; font-weight: 500; line-height: .95; letter-spacing: -.055em; color: #62829824; border-bottom: 1px solid var(--theme-line); margin-bottom: 54px; padding-bottom: 39px; user-select: none; }
+.site-footer h4 { letter-spacing: .15em; font-size: 10px; color: #b4def2; margin-bottom: 18px; }
+.site-footer a { display: inline-block; transition: color .3s, transform .3s; overflow-wrap: anywhere; }
+.site-footer .grid > div { min-width: 0; }
+.site-footer a:hover { color: #9adeff; transform: translateX(3px); }
+.site-footer .footer-brand img { height: 42px; width: 42px; object-fit: contain; }
+.site-footer .footer-brand span { font-size: 18px; letter-spacing: .05em; }
+.site-modal { background: #010b13d9; align-items: flex-start; }
+.site-modal > div { background: linear-gradient(145deg, #102a3a, #071a27); border-color: #406479; border-radius: 5px; margin-block: auto; max-height: calc(100dvh - 32px); overflow-y: auto; animation: modal-arrive .28s var(--theme-ease); }
+.site-modal .bg-slate-900 { background: #061721; }
+.site-modal h3 { font-family: Inter, Arial, sans-serif; font-weight: 500; }
+
+/* Intersection reveals use translate; card tilt uses transform independently. */
+[data-reveal] { opacity: 1; translate: 0 0; transition: opacity .72s var(--theme-ease), translate .8s var(--theme-ease); transition-delay: var(--reveal-delay, 0ms); }
+[data-reveal].reveal-pending { opacity: 0; translate: 0 30px; }
+@keyframes modal-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .safshikan-site .fleet-card:hover { border-color: #8ed7fa; box-shadow: 0 22px 60px #0006, 0 0 35px #59bded0a; transform: perspective(1200px) translateY(-7px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); }
+  .fleet-card:hover::after { opacity: 1; }
+  .fleet-card:hover .fleet-media img { transform: translate(var(--image-x, 0px), var(--image-y, 0px)) scale(1.075); filter: saturate(1.04); }
+  .fleet-card:hover .fleet-copy h3 { color: #a5e1fc; transform: translateY(-3px); }
+  .fleet-card:hover .fleet-copy p { color: #c8dce8; transform: translateY(-3px); }
+  .fleet-card:hover .fleet-specs { border-color: #77c3e870; }
+  .fleet-card:hover .fleet-arrow { transform: translate(2px, -2px); }
+  .service-card:hover, .company-card:hover, .leadership-card:hover { border-color: #82c9e87d; transform: translateY(-4px); box-shadow: 0 16px 30px #0002; }
+  .service-card:hover::before, .company-card:hover::before, .leadership-card:hover::before { transform: scaleY(1); }
+  .service-card:hover h3 { color: #a1e2fc; transform: translateX(3px); }
+  .readiness-option:hover { transform: translateY(-4px); border-color: #7cc3e5; }
+}
+@media (min-width: 1024px) {
+  .section-capabilities .section-aside { position: sticky; top: 140px; align-self: start; }
+  .section-capabilities .section-aside h2 { font-size: clamp(36px, 3.6vw, 51px); }
+}
+@media (max-width: 1100px) {
+  .fleet-grid { gap: 18px; }
+  .fleet-body { padding: 23px 18px; }
+  .fleet-copy h3 { font-size: 19px; }
+  .fleet-heading > div:first-child { column-gap: 32px; }
+  .contact-panel { padding: 28px; }
+}
+@media (max-width: 900px) {
+  .fleet-heading > div:first-child { display: block; }
+  .fleet-heading h2 { margin-bottom: 20px; }
+  .fleet-heading p { max-width: 580px; }
+  .site-section h2 { font-size: 43px; }
+  .readiness-detail { padding: 28px; }
+  .leadership-card:nth-child(2) { border-right: 0; }
+  .leadership-card:nth-child(-n+2) { border-bottom: 1px solid var(--theme-line); }
+}
+@media (max-width: 600px) {
+  .safshikan-site main > .site-section { padding-block: 66px; }
+  .site-section h2 { font-size: clamp(32px, 9vw, 42px); margin-top: 18px; }
+  .site-section > .section-shell > .text-center { text-align: left; margin-bottom: 34px; }
+  .site-section .das-badge { font-size: 8px; letter-spacing: .16em; }
+  .fleet-heading { margin-bottom: 26px; }
+  .fleet-heading p { font-size: 12px; }
+  .fleet-filters { flex-wrap: nowrap; overflow-x: auto; margin-right: -20px; padding-right: 20px; padding-bottom: 10px; margin-top: 27px; scrollbar-width: thin; }
+  .fleet-filters button { flex-shrink: 0; white-space: nowrap; font-size: 10px; padding: 9px 12px; }
+  .fleet-grid { gap: 25px; }
+  .fleet-media { aspect-ratio: 16 / 10; }
+  .fleet-body { padding: 24px 22px; }
+  .fleet-copy h3 { font-size: 23px; }
+  .fleet-specs { font-size: 11px; }
+  .fleet-actions > button { font-size: 11px; }
+  .service-card { padding: 24px; }
+  .service-card h3 { font-size: 21px; }
+  .readiness-options { gap: 10px; }
+  .readiness-option { padding: 22px; }
+  .readiness-detail { padding: 24px; }
+  .readiness-detail [class*='bg-slate-900'] { padding: 15px; }
+  .readiness-detail [class*='bg-slate-900'] > div:last-child { font-size: 18px; }
+  .site-section .leadership-card { border-right: 0; border-bottom: 1px solid var(--theme-line); padding: 27px 23px; }
+  .site-section .leadership-card:last-child { border-bottom: 0; }
+  .contact-panel { padding: 24px 20px; }
+  .contact-panel h3 { font-size: 21px; }
+  .contact-details a { font-size: 18px; }
+  .site-footer { padding-top: 48px; }
+  .footer-wordmark { margin-bottom: 36px; padding-bottom: 29px; }
+  .site-modal { padding: 10px; }
+  .site-modal > div { max-height: calc(100dvh - 20px); padding: 23px 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal], [data-reveal].reveal-pending { opacity: 1; translate: none; transition: none; }
+  .safshikan-site .fleet-card, .safshikan-site .fleet-card:hover, .fleet-media img,
+  .fleet-card:hover .fleet-media img, .fleet-copy h3, .fleet-copy p,
+  .service-card, .company-card, .leadership-card, .readiness-option,
+  .site-footer a:hover { transform: none !important; }
+  .site-modal > div { animation: none; }
+}

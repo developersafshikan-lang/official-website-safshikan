@@ -1,0 +1,43 @@
+/* Cinematic flight presentation. Product specifications remain in App.jsx. */
+.hero-scene .flight-slide { position:absolute; inset:0; opacity:0; transition:opacity 1.65s ease, transform 8s linear; transform:translateY(var(--scene-shift,0px)) scale(1.065); }
+.hero-scene .flight-slide.is-active { opacity:1; transform:translateY(var(--scene-shift,0px)) scale(1.015); }
+.hero-caption { bottom:244px; min-width:240px; }
+.flight-controls { position:absolute; right:max(56px,calc((100vw - 1320px)/2)); bottom:192px; display:flex; align-items:center; gap:7px; color:#d9effb; }
+.flight-controls button { display:grid; place-items:center; width:36px; height:36px; background:#07182480; border:1px solid #b3deef33; border-radius:50%; transition:background .25s,border-color .25s; }
+.flight-controls button:hover { background:#297ca06b; border-color:#9adfff; }
+.flight-controls button:focus-visible,.visual-switch button:focus-visible { outline:2px solid #a4e2ff; outline-offset:4px; }
+.flight-count { font:12px monospace; margin-right:12px; letter-spacing:.08em; }
+.flight-count > span { color:#9db4c2; }
+.flight-dots { display:flex; }
+.flight-dots button { width:26px; background:transparent; border:0; }
+.flight-dots button span { width:5px; height:5px; border-radius:5px; background:#91aebe; transition:height .3s,background .3s; }
+.flight-dots button[aria-pressed=true] span { height:19px; background:#9de1ff; }
+.fleet-media { isolation:isolate; }
+.fleet-media > img { transition:transform 1.1s cubic-bezier(.2,.7,.2,1),filter .6s; }
+.fleet-media:after { content:''; position:absolute; inset:0; pointer-events:none; box-shadow:inset 0 -55px 48px -35px #03111f; }
+.visual-switch { position:absolute; z-index:2; bottom:12px; left:14px; right:14px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.visual-switch > span { color:#d9e8f2; background:#03131da6; padding:4px 6px; border-radius:4px; font-size:9px; }
+.visual-switch button { background:#06131dd9; border:1px solid #c4e9ff55; color:#e1f3ff; border-radius:5px; padding:7px 9px; font-size:10px; }
+.visual-switch button:hover { background:#145274; }
+.visual-switch button span { margin-left:5px; }
+.fleet-media:has(.visual-switch) .fleet-index { bottom:51px; }
+.fleet-card .fleet-actions button { transition:background .3s,box-shadow .3s,transform .3s; }
+.fleet-card .fleet-actions button:hover { box-shadow:0 0 20px #5bbefa22; transform:translateY(-2px); }
+.site-section { scroll-margin-top:90px; }
+@media(min-width:768px) { .hero-scene .flight-slide { object-position:66% 45%; } }
+@media(max-width:1024px) and (min-width:768px) { .flight-controls { right:32px; bottom:155px; } .hero-caption { bottom:202px; } }
+@media(max-width:767px) {
+  .hero-scene .flight-slide { width:160%; height:auto; inset:70px auto auto -58%; transform:scale(1.04); }
+  .hero-scene .flight-slide.is-active { transform:scale(1); }
+  .flight-controls { top:329px; bottom:auto; left:24px; right:auto; gap:4px; }
+  .flight-count { margin-right:5px; }
+  .hero-content { padding-top:405px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-scene .flight-slide,.hero-scene .flight-slide.is-active { transition:none; transform:none; }
+  .fleet-media > img,.fleet-card .fleet-actions button,.flight-controls button,.flight-dots button span { transition:none; }
+  .fleet-card .fleet-actions button:hover { transform:none; }
+}
+.flight-count { white-space:nowrap; flex-shrink:0; }
+@media(max-width:360px) { .flight-controls { left:18px; gap:2px; } .flight-controls > button { width:32px; height:32px; } .flight-dots button { width:23px; } }
+@media(min-width:768px) and (max-width:1024px) { .hero-shade { background:linear-gradient(90deg,#03121bd9,transparent 90%),linear-gradient(0deg,#03121b 3%,transparent 65%); } }

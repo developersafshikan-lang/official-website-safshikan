@@ -1,0 +1,57 @@
+/* Isolated banner presentation: no catalogue, SEO or application changes. */
+.cinematic-hero.live-flight { min-height:850px; height:100svh; max-height:1100px; background:#06121e; }
+.live-sky {position:absolute;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,#071521 0%,#173e54 52%,#081c29 90%);}
+.live-sky__glow {position:absolute;inset:-30%;background:radial-gradient(ellipse at 65% 35%,#72c8e62e,transparent 40%);animation:sky-breathe 14s ease-in-out infinite alternate;}
+.live-sky__stars {position:absolute;inset:0;opacity:.3;background-image:radial-gradient(circle,#bdeaff 1px,transparent 1px);background-size:153px 117px;mask-image:linear-gradient(#000,transparent 55%);}
+.live-mountains {position:absolute;bottom:0;left:-4%;width:108%;height:68%;opacity:.8;}
+.live-mist {position:absolute;inset:10% -60% -20%;background:radial-gradient(ellipse at 30% 65%,#83c8dc2b,transparent 24%),radial-gradient(ellipse at 65% 50%,#bddce91e,transparent 28%);filter:blur(35px);animation:mist-drift 28s linear infinite alternate;}
+.live-mist--near {inset:30% -60% -30%;opacity:.7;animation-duration:18s;animation-direction:alternate-reverse;}
+.live-flight .live-heading {position:relative;padding-top:128px;text-align:center;}
+.live-heading .home-eyebrow {font-size:10px;letter-spacing:.28em;margin-bottom:15px;}
+.live-heading h1 {font-size:clamp(28px,3.4vw,49px);font-weight:500;letter-spacing:-.045em;line-height:1.1;color:#f1f7fb;margin:0;}
+.live-heading h1 span {color:#8cdbfa;}
+.live-stage {position:absolute;top:225px;bottom:245px;left:0;right:0;pointer-events:none;}
+.live-pass {position:absolute;inset:0 0 65px;display:grid;place-items:center;animation:drone-passage 8s both;will-change:transform,opacity;}
+.live-hover {height:100%;width:min(760px,70vw);display:grid;place-items:center;animation:drone-hover 2.8s ease-in-out infinite;}
+.live-hover img {width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 30px 24px #0006);}
+.live-name {position:absolute;bottom:0;left:15px;right:15px;text-align:center;animation:drone-name 8s both;color:#eef9ff;}
+.live-name span {display:block;font-size:9px;letter-spacing:.26em;color:#9ec5d7;margin-bottom:7px;}
+.live-name strong {font-size:clamp(25px,3vw,38px);font-weight:500;letter-spacing:.08em;}
+.live-name i {display:block;height:1px;width:50px;background:#87d9f5;margin:15px auto 0;box-shadow:0 0 14px #80dfff;}
+.live-flight .live-bottom {position:absolute;bottom:166px;left:0;right:0;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.live-controls {display:flex;align-items:center;gap:5px;color:#d6eef7;}
+.live-controls button {width:34px;height:34px;display:grid;place-items:center;border:1px solid #abd4e333;background:#05172280;border-radius:50%;}
+.live-controls button:hover {background:#32658180;}
+.live-controls button:focus-visible {outline:2px solid #9ce3ff;outline-offset:4px;}
+.live-count {font:12px monospace;letter-spacing:.08em;margin-right:10px;white-space:nowrap;}
+.live-count small {color:#8aaabb;font:inherit;}
+.live-controls .live-dot {border:0;background:transparent;width:22px;}
+.live-dot span {width:5px;height:5px;background:#6e92a3;border-radius:10px;}
+.live-dot[aria-pressed=true] span {height:16px;background:#a3e6ff;}
+.live-flight .hero-scroll {display:none;}
+.live-flight .live-pass,.live-flight .live-hover,.live-flight .live-name,.live-flight .live-mist,.live-flight .live-sky__glow {animation-play-state:var(--flight-state,paused);}
+.live-flight.is-static .live-pass,.live-flight.is-static .live-name {animation:none;transform:none;opacity:1;}
+@keyframes drone-passage {0%{transform:translate3d(110vw,-35px,0) rotate(-7deg) scale(.85);opacity:0;animation-timing-function:cubic-bezier(.18,.7,.22,1)}18%{transform:translate3d(0,0,0) rotate(0) scale(1);opacity:1}80%{transform:translate3d(0,0,0) rotate(0) scale(1);opacity:1;animation-timing-function:cubic-bezier(.65,0,.8,.4)}100%{transform:translate3d(-110vw,-45px,0) rotate(-7deg) scale(.9);opacity:0}}
+@keyframes drone-hover {0%,100%{transform:translateY(0) rotate(.25deg)}50%{transform:translateY(-9px) rotate(-.25deg)}}
+@keyframes drone-name {0%,15%{opacity:0;transform:translateY(10px)}23%,77%{opacity:1;transform:translateY(0)}85%,100%{opacity:0;transform:translateY(-6px)}}
+@keyframes mist-drift {from{transform:translateX(-12%)}to{transform:translateX(12%)}}
+@keyframes sky-breathe {from{transform:translateX(-3%) scale(1)}to{transform:translateX(3%) scale(1.15)}}
+@media(max-width:767px){
+ .cinematic-hero.live-flight {height:auto;max-height:none;min-height:0;padding-bottom:24px;}
+ .live-flight .live-heading {padding-top:112px;}
+ .live-heading .home-eyebrow {font-size:8px;letter-spacing:.2em;}
+ .live-heading h1 {font-size:clamp(25px,5.7vw,40px);}
+ .live-stage {position:relative;top:auto;bottom:auto;height:300px;margin-top:16px;}
+ .live-pass {bottom:75px;}.live-hover{width:94vw;}
+ .live-name strong {font-size:28px;}
+ .live-flight .live-bottom {position:relative;bottom:auto;flex-direction:column;gap:24px;margin:24px auto 32px;}
+ .live-flight .solution-strip {position:relative;bottom:auto;}
+ .live-mountains {height:80%;}
+}
+@media(prefers-reduced-motion:reduce){.live-flight .live-pass,.live-flight .live-hover,.live-flight .live-name,.live-flight .live-mist,.live-flight .live-sky__glow{animation:none;transform:none;opacity:1;}}
+.live-heading .home-eyebrow {justify-content:center;}
+
+.live-valley {position:absolute;inset:-4%;background:linear-gradient(180deg,#02101c44,transparent 50%,#03121da6),url('/assets/live-flight-valley.png') center/cover;animation:valley-pan 24s ease-in-out infinite alternate;animation-play-state:var(--flight-state,paused);}
+.live-sky__stars{display:none;}
+@keyframes valley-pan {from{transform:scale(1) translateX(-.6%)}to{transform:scale(1.06) translateX(.6%)}}
+@media(prefers-reduced-motion:reduce){.live-flight .live-valley{animation:none;}}
