@@ -35,16 +35,6 @@
     "background": "/assets/banner-backgrounds/07.png"
   },
   {
-    "name": "Medical Aid Delivery Drone",
-    "image": "/assets/banner-industry/medical-aid-delivery.png",
-    "background": "/assets/banner-backgrounds/08.png"
-  },
-  {
-    "name": "Fire Extinguisher Drone",
-    "image": "/assets/banner-industry/fire-extinguisher.png",
-    "background": "/assets/banner-backgrounds/09.png"
-  },
-  {
     "name": "Heavy Lifting Drone",
     "image": "/assets/banner-industry/heavy-lifting-v2.png",
     "background": "/assets/banner-backgrounds/10.png"
