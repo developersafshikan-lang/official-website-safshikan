@@ -23,20 +23,6 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   ]
 },
 {
-  "id": "medical-aid-delivery",
-  "name": "Medical Aid Delivery Drone",
-  "sector": "Industry Application",
-  "category": "Medical Logistics",
-  "tagline": "Medical Logistics",
-  "image": "/assets/medical-aid-delivery-scene.jpg",
-  "description": "Aerial transport for medical supplies, supporting deliveries to clinics and communities where ground access is difficult.",
-  "specs": {},
-  "features": [
-    "Medical Logistics",
-    "Contact our team for configuration and technical specifications."
-  ]
-},
-{
   "id": "fire-extinguisher",
   "name": "Fire Extinguisher Drone",
   "sector": "Industry Application",
