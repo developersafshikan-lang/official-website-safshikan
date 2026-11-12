@@ -1170,7 +1170,7 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-xs text-slate-500 font-mono uppercase">Official Email</div>
-                    <a href="mailto:info.safshikan@gmail.com" className="text-base font-bold text-white hover:text-blue-400 transition-colors">info.safshikan@gmail.com</a>
+                    <a href="mailto:info@safshikan.com" className="text-base font-bold text-white hover:text-blue-400 transition-colors">info@safshikan.com</a>
                   </div>
                   <div>
                     <div className="text-xs text-slate-500 font-mono uppercase">Headquarters</div>
@@ -1342,7 +1342,7 @@ export default function App() {
               <h4 className="text-xs font-mono uppercase font-bold text-white tracking-wider">Contact</h4>
               <div className="space-y-2 text-xs text-slate-400">
                 <p><a href="tel:+923213630768" className="hover:text-white transition-colors">+92 321 3630768</a></p>
-                <p><a href="mailto:info.safshikan@gmail.com" className="hover:text-white transition-colors">info.safshikan@gmail.com</a></p>
+                <p><a href="mailto:info@safshikan.com" className="hover:text-white transition-colors">info@safshikan.com</a></p>
                 <p className="text-slate-400">NASTP Alpha 16</p>
               </div>
             </div>
