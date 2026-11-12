@@ -130,7 +130,7 @@ export default function Footer({ onOpenRfp }) {
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-300">
                   <Mail className="w-4 h-4 text-sky-400 shrink-0" />
-                  <a href="mailto:info.safshikan@gmail.com" className="hover:text-sky-400">info.safshikan@gmail.com</a>
+                  <a href="mailto:info@safshikan.com" className="hover:text-sky-400">info@safshikan.com</a>
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-300">
                   <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
