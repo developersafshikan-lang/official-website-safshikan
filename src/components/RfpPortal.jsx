@@ -176,7 +176,7 @@ export default function RfpPortal({ isOpen, onClose }) {
             <div className="pt-2 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs font-mono text-slate-400 gap-2">
               <div className="flex items-center gap-2 text-cyan-400">
                 <Mail className="w-3.5 h-3.5" />
-                <span>info.safshikan@gmail.com</span>
+                <span>info@safshikan.com</span>
               </div>
               <div className="flex items-center gap-2 text-emerald-400">
                 <Phone className="w-3.5 h-3.5" />
