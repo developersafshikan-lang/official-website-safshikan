@@ -9,6 +9,382 @@ import useSiteMotion from './hooks/useSiteMotion';
 // Official Safshikan Products Dataset
 const OFFICIAL_SAFSHIKAN_PRODUCTS = [
 {
+    id: 'grim-reaper',
+    name: 'The Grim Reaper UAS',
+    sector: 'Defense & Armed Reconnaissance',
+    category: 'Military-Grade Tactical UAS',
+    tagline: 'High-Endurance Tactical UAS with 6x 60mm Mortar Modular Rack',
+    image: './assets/grim_reaper_optimized.jpg',
+    description: 'Military-grade tactical UAS built for high-endurance missions and precision kinetic delivery. Features a custom modular rack for independent delivery of six 60mm mortars, centimeter-level RTK positioning, dual-sensor Thermal/Visible payload, and 4G C2 datalink.',
+    specs: {
+      payload: 'Custom Rack for 6x 60mm Mortars',
+      range: '20 km Operational Radius',
+      endurance: 'Up to 40 mins (no load) / 25 mins (full load)',
+      positioning: 'Centimeter-Level RTK Positioning',
+      sensors: 'Integrated Dual-Sensor Thermal & Visible Pod',
+      comms: '4G Modules for Telemetry & C2 Links'
+    },
+    features: [
+      'Modular independent release rack for six 60mm mortars',
+      '20km operational communication radius',
+      'Centimeter-level precision utilizing RTK positioning',
+      'Integrated 4G telemetry and command-and-control links'
+    ]
+  },
+{
+    id: 'bvlos-network',
+    name: 'BVLOS: High Payload Delivery',
+    sector: 'Defense & Armed Reconnaissance',
+    category: 'Heavy-Lift Tactical UAS',
+    tagline: 'High-Capacity Heavy-Lift Tactical UAS for BVLOS Operations',
+    image: './assets/bvlos_catalog_actual_optimized.jpg',
+    description: 'High-capacity, heavy-lift tactical UAS engineered for Beyond Visual Line of Sight (BVLOS) long-range logistics and mission-critical delivery. Utilizes a network-centric 4G architecture to ensure secure, global command and control up to 25km radius with a 16kg payload.',
+    specs: {
+      payload: '16 kg Maximum Heavy-Lift Payload',
+      range: '25 km Operational Reach',
+      endurance: 'Up to 45 mins (no load) / 30 mins (full load)',
+      datalink: 'Integrated 4G Module Network-Centric Datalink',
+      mode: 'Engineered for BVLOS Tactical Delivery'
+    },
+    features: [
+      'Structural upgrades supporting maximum 16kg heavy-lift payload',
+      '25km operational long-range reach for BVLOS missions',
+      'Sustained flight operations up to 30 mins with full load (45 mins without)',
+      'Integrated 4G modules for global command and telemetry datalink'
+    ]
+  },
+{
+    id: 'sentinel-vigilance',
+    name: 'Sentinel Vigilance Pro',
+    sector: 'Defense & Armed Reconnaissance',
+    category: 'Police-Grade Security Drone',
+    tagline: 'Advanced Security & Night Surveillance with Megaphone',
+    image: './assets/sentinel_catalog_optimized.jpg',
+    description: 'Police-grade security drone specifically designed for surveillance, night operations, and emergency communication. Features multi-sensor camera with 640x480 thermal zoom and a high-output megaphone built into a rugged all-weather carbon fiber airframe.',
+    specs: {
+      payload: '5 kg Maximum Payload Capacity',
+      range: '30 km Operational Reach',
+      endurance: 'Up to 60 mins (no load) / 45 mins (full load)',
+      sensors: 'Multi-Sensor Camera (Thermal Zoom) & Megaphone',
+      datalink: 'Integrated 4G Module Global Telemetry'
+    },
+    features: [
+      'Rugged all-weather carbon fiber security airframe',
+      'Integrated multi-sensor thermal zoom optics & high-output megaphone',
+      '30km operational long-range mission radius',
+      'Sustained flight endurance up to 60 minutes (45 mins with payload)'
+    ]
+  },
+{
+    id: 'sovraan-1',
+    name: 'Edith Sovran-I',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '10-Inch Tactical Delivery UAS',
+    tagline: 'Short-Range 10-Inch UAS for Single 60mm Mortar Delivery',
+    image: './assets/sovraan_1_catalog_optimized.jpg',
+    description: 'Versatile 10-inch tactical UAS designed for precise short-range delivery operations. Engineered for transporting specialized single 60mm mortar payloads across challenging operational environments.',
+    specs: {
+      platform: '10-Inch Tactical Delivery UAS',
+      payload: '1.5 kg Payload (Single 60mm Mortar)',
+      range: '5 km Mission Radius',
+      endurance: 'Up to 25 mins (no load) / 12.5 mins (full load)',
+      loadout: 'Configured for Single 60mm Mortar'
+    },
+    features: [
+      '10-inch heavy carbon fiber tactical frame',
+      'Optimized for 1.5kg payload (single 60mm mortar delivery)',
+      '5km operational mission radius',
+      '12.5 minutes sustained flight carrying full 60mm payload'
+    ]
+  },
+{
+    id: 'sovraan-2',
+    name: 'Edith Sovran-II',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '10-Inch Dual Grenade Delivery UAS',
+    tagline: 'Tactical UAS for Simultaneous Delivery of 2x 750g Grenades',
+    image: './assets/sovraan_2_catalog_optimized.jpg',
+    description: 'Specialized 10-inch tactical UAS designed for dual-payload delivery operations. Features an integrated dual-sensor system (640x480 thermal and 2K visible camera) for simultaneous transport of two 750g grenades.',
+    specs: {
+      platform: '10-Inch Tactical Delivery UAS',
+      payload: '1.5 kg Total Payload (2x 750g Grenades)',
+      sensors: 'Integrated Dual-Sensor (640x480 Thermal & 2K Visible)',
+      range: '5 km Mission Radius',
+      endurance: 'Up to 25 mins (no load) / 12.5 mins (full load)'
+    },
+    features: [
+      'Dual grenade release system (2x 750g grenades)',
+      'Integrated dual-sensor optics: 640x480 thermal & 2K visible light',
+      '5km mission engagement radius',
+      '12.5 mins flight window under full tactical payload'
+    ]
+  },
+{
+    id: 'sovraan-3',
+    name: 'Edith Sovran-III',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '10-Inch Reconnaissance & EW Anti-Jamming',
+    tagline: 'Tactical ISR UAS with 22x Zoom, Thermal Optics & EW Anti-Jamming',
+    image: './assets/sovraan_3_catalog_optimized.jpg',
+    description: 'Specialized 10-inch tactical UAS designed for tactical level reconnaissance and night operations. Equipped with Thermal & Visible camera with 22x extended zoom and hardware anti-jamming module to monitor targets undetected.',
+    specs: {
+      platform: '10-Inch Tactical Reconnaissance UAS',
+      sensors: 'Thermal & Visible Camera (22x Extended Zoom)',
+      antiJamming: 'Integrated Hardware Anti-Jamming Module',
+      payload: 'Optional Servo Payload Release Mechanism',
+      range: '5 km Mission Radius',
+      endurance: 'Up to 25 minutes Flight Time'
+    },
+    features: [
+      '22x extended zoom with thermal and 2K visible optics',
+      'Integrated electronic warfare anti-jamming module',
+      'Optional servo-actuated payload drop mechanism',
+      'Undetected night operations and tactical ISR loiter'
+    ]
+  },
+{
+    id: '7inch-digital',
+    name: '7-Inch Long Range Digital FPV UAV',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '7-Inch Digital FPV Platform',
+    tagline: 'High-Agility Digital FPV UAV with 4K HD Feed',
+    image: './assets/7inch_digital_catalog_optimized.jpg',
+    description: 'High-agility tactical kamikaze platform engineered for precision one-way missions. Optimized for low-latency 4K digital video feedback and high maneuverability carrying a 750g tactical payload.',
+    specs: {
+      platform: '7-Inch FPV Digital UAV',
+      transmission: '4K High-Definition Digital Video Feed',
+      payload: '750g Tactical Payload',
+      range: '2 km+ Mission Radius',
+      endurance: 'Up to 25 mins (no load) / 15 mins (full load)'
+    },
+    features: [
+      '4K high-definition digital video feed for enhanced situational awareness',
+      '750g tactical payload capacity for targeted delivery',
+      '2km+ extended operational mission radius',
+      '15 minutes sustained flight time with full 750g load'
+    ]
+  },
+{
+    id: '7inch-analog',
+    name: '7-Inch Long Range Analog FPV UAV',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '7-Inch Analog FPV Platform',
+    tagline: 'Zero-Latency Analog FPV UAV with Foxeer & Patch Antenna',
+    image: './assets/7inch_analog_catalog_optimized.jpg',
+    description: 'Specialized tactical kamikaze platform designed for rapid deployment and high-agility maneuvers. Optimized for zero-latency feedback via an analog link, Foxeer antenna, and high-gain patch antenna.',
+    specs: {
+      platform: '7-Inch FPV Analog UAV',
+      transmission: 'Low-Latency Analog Video Feed',
+      antenna: 'Foxeer Antenna & High-Gain Patch Antenna',
+      payload: '750g Tactical Payload',
+      range: '2 km+ Mission Radius',
+      endurance: 'Up to 25 mins (no load) / 15 mins (full load)'
+    },
+    features: [
+      'Zero-latency analog video link for screen-based display output',
+      'Foxeer antenna & high-gain patch antenna for RF signal penetration',
+      '750g tactical payload carrying capacity',
+      '15 minutes flight endurance under full payload'
+    ]
+  },
+{
+    id: '5inch-digital',
+    name: '5-Inch Long Range Digital FPV UAV',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '5-Inch Digital FPV Platform',
+    tagline: 'Compact Tactical Interceptor with Digital DJI Video System',
+    image: './assets/5inch_digital_catalog_optimized.jpg',
+    description: 'Compact, high-velocity tactical interceptor designed for surgical precision in short-range operations. Leverages an integrated Digital DJI Video system for unmatched visual clarity carrying a 300g precision payload.',
+    specs: {
+      platform: '5-Inch FPV Digital UAV',
+      transmission: 'Integrated Digital DJI Video System',
+      payload: '300g Precision Payload',
+      range: '2 km Operational Distance',
+      endurance: 'Sustained Window up to 25 Minutes'
+    },
+    features: [
+      'Integrated Digital DJI Video system for high-fidelity awareness',
+      'Tailored for 300g precision payload delivery',
+      'Compact, unobtrusive profile for restricted environments',
+      '25 minutes operational flight window'
+    ]
+  },
+{
+    id: '5inch-analog',
+    name: '5-Inch Long Range Analog FPV UAV',
+    sector: 'Defense & Armed Reconnaissance',
+    category: '5-Inch Analog FPV Platform',
+    tagline: 'Ultra-Responsive FPV UAV with Zero-Latency Analog Feed',
+    image: './assets/5inch_analog_catalog_optimized.jpg',
+    description: 'Ultra-responsive, small-form tactical asset engineered for rapid engagement in restricted environments. Prioritizes a high power-to-weight ratio and robust analog interface carrying a 300g payload.',
+    specs: {
+      platform: '5-Inch FPV Analog UAV',
+      transmission: 'Integrated Analog Video System (Zero-Latency)',
+      antenna: 'Foxeer Antenna & High-Gain Patch Antenna',
+      payload: '300g Tactical Payload',
+      range: '2 km Operational Distance',
+      endurance: 'Sustained Window up to 25 Minutes'
+    },
+    features: [
+      'Zero-latency analog video feed for screen-based output',
+      'Foxeer & high-gain patch antenna system',
+      'High-discharge battery system for explosive maneuverability',
+      '25 minutes sustained operational window'
+    ]
+  },
+{
+    id: 'agron-10l',
+    name: 'AGRON 10L Agriculture Spray Drone',
+    sector: 'Agriculture & Civil Solutions',
+    category: 'Precision Agriculture Sprayer',
+    tagline: 'Efficient Aerial Spraying Solution (96 Acres / Day)',
+    image: './assets/agron_10l_catalog_optimized.jpg',
+    description: 'High-efficiency aerial spraying platform designed for plain field crops. Features 10-liter spray tank, 4-axis sprinklers (up to 5L/min flow), 5km dual-frequency link, and front/back/down terrain-following radar.',
+    specs: {
+      payload: '10 Liters Spray Tank',
+      coverage: '96 Acres / Day (4 Acres / Flight | 12 Acres / Hour)',
+      flowRate: 'Max 5 L/min (4 Sprinklers)',
+      range: '5 km Dual Frequency Transmission',
+      swath: '6 Meters Swath Width (3 Battery Stager Ops)',
+      avoidance: 'Front, Back & Down Terrain-Following Radar'
+    },
+    features: [
+      'Replaces hazardous manual pesticide spraying on field crops',
+      '96 acres per day coverage capacity (4 acres per flight)',
+      'Automated terrain-following radar for uneven fields',
+      '3-battery stager continuous operation setup'
+    ]
+  },
+{
+    id: 'agron-30l',
+    name: 'AGRON 30L Agriculture Spray Drone',
+    sector: 'Agriculture & Civil Solutions',
+    category: 'Commercial Farm & Orchard Heavy Sprayer',
+    tagline: 'Heavy-Lift Agricultural System (336 Acres / Day)',
+    image: './assets/agron_30l_catalog_optimized.jpg',
+    description: 'Commercial-grade heavy agricultural drone with 30L spray tank and 50L spreading tank. Engineered for large farms and orchards with dual centrifugal sprinklers delivering up to 16L/min.',
+    specs: {
+      payload: '30L Spray Tank | 50L Spreading Tank',
+      coverage: '336 Acres / Day (7 Acres / Flight | 42 Acres / Hour)',
+      flowRate: 'Max 16 L/min (2 Centrifugal Sprinklers)',
+      range: '5 km Dual Frequency Transmission',
+      swath: '6 Meters Swath Width (3 Battery Stager Ops)',
+      avoidance: 'Front, Back & Down Terrain-Following Radar'
+    },
+    features: [
+      'Dual capability: 30L liquid spray & 50L granular spreading tank',
+      'Dual centrifugal atomizing sprinklers for drift control',
+      'High daily coverage of 336 acres per day (7 acres per flight)',
+      '42 acres per hour operational efficiency'
+    ]
+  },
+{
+    id: 'agron-50l',
+    name: 'AGRON 50L Agriculture Spray Drone',
+    sector: 'Agriculture & Civil Solutions',
+    category: 'Ultra Heavy-Lift Sprayer & Spreader',
+    tagline: 'Ultra Heavy-Lift Agricultural System (336+ Acres / Day)',
+    image: './assets/agron_z50p.jpeg',
+    description: 'Commercial-grade ultra heavy agricultural drone with 50L capacity (spray & granular spreading). Engineered for vast farm acreage with high-velocity atomizing sprinklers delivering up to 16L/min.',
+    specs: {
+      payload: '50L Tank (Liquid Spray & Granular Spreading)',
+      coverage: '336+ Acres / Day (7+ Acres / Flight)',
+      flowRate: 'Max 16 L/min (High-Velocity Atomizers)',
+      range: '5 km Dual Frequency Transmission',
+      avoidance: '360° Omnidirectional Obstacle Avoidance Radar'
+    },
+    features: [
+      'Dual capability: 50L heavy spray & granular fertilizer spreading',
+      'High-velocity atomizing nozzles for drift control',
+      'Ultra high daily coverage for vast commercial acreage',
+      '360° omnidirectional obstacle avoidance radar'
+    ]
+  },
+{
+  "id": "dji-agras-t20",
+  "name": "DJI Agras T20",
+  "sector": "DJI Agri",
+  "category": "DJI Agri",
+  "tagline": "Precision Agriculture",
+  "image": "/assets/dji-agras-t20.png",
+  "description": "Agricultural spraying drone for crop-care operations, with a foldable airframe and an eight-nozzle spraying system.",
+  "specs": {},
+  "features": [
+    "Agricultural crop-care platform",
+    "Contact our team for configuration and technical specifications."
+  ]
+},
+{
+  "id": "dji-agras-t30",
+  "name": "DJI Agras T30",
+  "sector": "DJI Agri",
+  "category": "DJI Agri",
+  "tagline": "Precision Agriculture",
+  "image": "/assets/dji-agras-t30.png",
+  "description": "Agricultural drone with a 30-litre spraying tank and adjustable arms for field and orchard applications.",
+  "specs": {},
+  "features": [
+    "Agricultural crop-care platform",
+    "Contact our team for configuration and technical specifications."
+  ]
+},
+{
+  "id": "dji-agras-t50",
+  "name": "DJI Agras T50",
+  "sector": "DJI Agri",
+  "category": "DJI Agri",
+  "tagline": "Precision Agriculture",
+  "image": "/assets/dji-agras-t50.png",
+  "description": "Agricultural platform for spraying and spreading, with coaxial twin-rotor propulsion, dual atomizing sprinklers and obstacle-sensing systems.",
+  "specs": {},
+  "features": [
+    "Agricultural crop-care platform",
+    "Contact our team for configuration and technical specifications."
+  ]
+},
+{
+  "id": "dji-agras-t70",
+  "name": "DJI Agras T70",
+  "sector": "DJI Agri",
+  "category": "DJI Agri",
+  "tagline": "Precision Agriculture",
+  "image": "/assets/dji-agras-t70.png",
+  "description": "Agricultural drone for crop spraying and granular spreading. Contact our team to confirm the regional configuration and available equipment.",
+  "specs": {},
+  "features": [
+    "Agricultural crop-care platform",
+    "Contact our team for configuration and technical specifications."
+  ]
+},
+{
+  "id": "dji-agras-t70p",
+  "name": "DJI Agras T70P",
+  "sector": "DJI Agri",
+  "category": "DJI Agri",
+  "tagline": "Precision Agriculture",
+  "image": "/assets/dji-agras-t70p.png",
+  "description": "Agricultural drone for crop spraying and granular spreading. Contact our team to confirm the regional configuration and available equipment.",
+  "specs": {},
+  "features": [
+    "Agricultural crop-care platform",
+    "Contact our team for configuration and technical specifications."
+  ]
+},
+{
+  "id": "dji-agras-t100",
+  "name": "DJI Agras T100",
+  "sector": "DJI Agri",
+  "category": "DJI Agri",
+  "tagline": "Precision Agriculture",
+  "image": "/assets/dji-agras-t100.png",
+  "description": "Heavy-duty agricultural platform supporting spraying, spreading and lifting, designed for large-scale farm operations.",
+  "specs": {},
+  "features": [
+    "Agricultural crop-care platform",
+    "Contact our team for configuration and technical specifications."
+  ]
+},
+{
   "id": "building-cleaning",
   "name": "Building Cleaning Drone",
   "sector": "Industry Application",
@@ -63,299 +439,7 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
     "Lifebuoy Rescue",
     "Contact our team for configuration and technical specifications."
   ]
-},
-  {
-    id: 'grim-reaper',
-    name: 'The Grim Reaper UAS',
-    sector: 'Defense & Armed Reconnaissance',
-    category: 'Military-Grade Tactical UAS',
-    tagline: 'High-Endurance Tactical UAS with 6x 60mm Mortar Modular Rack',
-    image: './assets/grim_reaper_optimized.jpg',
-    description: 'Military-grade tactical UAS built for high-endurance missions and precision kinetic delivery. Features a custom modular rack for independent delivery of six 60mm mortars, centimeter-level RTK positioning, dual-sensor Thermal/Visible payload, and 4G C2 datalink.',
-    specs: {
-      payload: 'Custom Rack for 6x 60mm Mortars',
-      range: '20 km Operational Radius',
-      endurance: 'Up to 40 mins (no load) / 25 mins (full load)',
-      positioning: 'Centimeter-Level RTK Positioning',
-      sensors: 'Integrated Dual-Sensor Thermal & Visible Pod',
-      comms: '4G Modules for Telemetry & C2 Links'
-    },
-    features: [
-      'Modular independent release rack for six 60mm mortars',
-      '20km operational communication radius',
-      'Centimeter-level precision utilizing RTK positioning',
-      'Integrated 4G telemetry and command-and-control links'
-    ]
-  },
-  {
-    id: 'bvlos-network',
-    name: 'BVLOS: High Payload Delivery',
-    sector: 'Defense & Armed Reconnaissance',
-    category: 'Heavy-Lift Tactical UAS',
-    tagline: 'High-Capacity Heavy-Lift Tactical UAS for BVLOS Operations',
-    image: './assets/bvlos_catalog_actual_optimized.jpg',
-    description: 'High-capacity, heavy-lift tactical UAS engineered for Beyond Visual Line of Sight (BVLOS) long-range logistics and mission-critical delivery. Utilizes a network-centric 4G architecture to ensure secure, global command and control up to 25km radius with a 16kg payload.',
-    specs: {
-      payload: '16 kg Maximum Heavy-Lift Payload',
-      range: '25 km Operational Reach',
-      endurance: 'Up to 45 mins (no load) / 30 mins (full load)',
-      datalink: 'Integrated 4G Module Network-Centric Datalink',
-      mode: 'Engineered for BVLOS Tactical Delivery'
-    },
-    features: [
-      'Structural upgrades supporting maximum 16kg heavy-lift payload',
-      '25km operational long-range reach for BVLOS missions',
-      'Sustained flight operations up to 30 mins with full load (45 mins without)',
-      'Integrated 4G modules for global command and telemetry datalink'
-    ]
-  },
-  {
-    id: 'sentinel-vigilance',
-    name: 'Sentinel Vigilance Pro',
-    sector: 'Defense & Armed Reconnaissance',
-    category: 'Police-Grade Security Drone',
-    tagline: 'Advanced Security & Night Surveillance with Megaphone',
-    image: './assets/sentinel_catalog_optimized.jpg',
-    description: 'Police-grade security drone specifically designed for surveillance, night operations, and emergency communication. Features multi-sensor camera with 640x480 thermal zoom and a high-output megaphone built into a rugged all-weather carbon fiber airframe.',
-    specs: {
-      payload: '5 kg Maximum Payload Capacity',
-      range: '30 km Operational Reach',
-      endurance: 'Up to 60 mins (no load) / 45 mins (full load)',
-      sensors: 'Multi-Sensor Camera (Thermal Zoom) & Megaphone',
-      datalink: 'Integrated 4G Module Global Telemetry'
-    },
-    features: [
-      'Rugged all-weather carbon fiber security airframe',
-      'Integrated multi-sensor thermal zoom optics & high-output megaphone',
-      '30km operational long-range mission radius',
-      'Sustained flight endurance up to 60 minutes (45 mins with payload)'
-    ]
-  },
-  {
-    id: 'sovraan-1',
-    name: 'Edith Sovran-I',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '10-Inch Tactical Delivery UAS',
-    tagline: 'Short-Range 10-Inch UAS for Single 60mm Mortar Delivery',
-    image: './assets/sovraan_1_catalog_optimized.jpg',
-    description: 'Versatile 10-inch tactical UAS designed for precise short-range delivery operations. Engineered for transporting specialized single 60mm mortar payloads across challenging operational environments.',
-    specs: {
-      platform: '10-Inch Tactical Delivery UAS',
-      payload: '1.5 kg Payload (Single 60mm Mortar)',
-      range: '5 km Mission Radius',
-      endurance: 'Up to 25 mins (no load) / 12.5 mins (full load)',
-      loadout: 'Configured for Single 60mm Mortar'
-    },
-    features: [
-      '10-inch heavy carbon fiber tactical frame',
-      'Optimized for 1.5kg payload (single 60mm mortar delivery)',
-      '5km operational mission radius',
-      '12.5 minutes sustained flight carrying full 60mm payload'
-    ]
-  },
-  {
-    id: 'sovraan-2',
-    name: 'Edith Sovran-II',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '10-Inch Dual Grenade Delivery UAS',
-    tagline: 'Tactical UAS for Simultaneous Delivery of 2x 750g Grenades',
-    image: './assets/sovraan_2_catalog_optimized.jpg',
-    description: 'Specialized 10-inch tactical UAS designed for dual-payload delivery operations. Features an integrated dual-sensor system (640x480 thermal and 2K visible camera) for simultaneous transport of two 750g grenades.',
-    specs: {
-      platform: '10-Inch Tactical Delivery UAS',
-      payload: '1.5 kg Total Payload (2x 750g Grenades)',
-      sensors: 'Integrated Dual-Sensor (640x480 Thermal & 2K Visible)',
-      range: '5 km Mission Radius',
-      endurance: 'Up to 25 mins (no load) / 12.5 mins (full load)'
-    },
-    features: [
-      'Dual grenade release system (2x 750g grenades)',
-      'Integrated dual-sensor optics: 640x480 thermal & 2K visible light',
-      '5km mission engagement radius',
-      '12.5 mins flight window under full tactical payload'
-    ]
-  },
-  {
-    id: 'sovraan-3',
-    name: 'Edith Sovran-III',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '10-Inch Reconnaissance & EW Anti-Jamming',
-    tagline: 'Tactical ISR UAS with 22x Zoom, Thermal Optics & EW Anti-Jamming',
-    image: './assets/sovraan_3_catalog_optimized.jpg',
-    description: 'Specialized 10-inch tactical UAS designed for tactical level reconnaissance and night operations. Equipped with Thermal & Visible camera with 22x extended zoom and hardware anti-jamming module to monitor targets undetected.',
-    specs: {
-      platform: '10-Inch Tactical Reconnaissance UAS',
-      sensors: 'Thermal & Visible Camera (22x Extended Zoom)',
-      antiJamming: 'Integrated Hardware Anti-Jamming Module',
-      payload: 'Optional Servo Payload Release Mechanism',
-      range: '5 km Mission Radius',
-      endurance: 'Up to 25 minutes Flight Time'
-    },
-    features: [
-      '22x extended zoom with thermal and 2K visible optics',
-      'Integrated electronic warfare anti-jamming module',
-      'Optional servo-actuated payload drop mechanism',
-      'Undetected night operations and tactical ISR loiter'
-    ]
-  },
-  {
-    id: '7inch-digital',
-    name: '7-Inch Long Range Digital FPV UAV',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '7-Inch Digital FPV Platform',
-    tagline: 'High-Agility Digital FPV UAV with 4K HD Feed',
-    image: './assets/7inch_digital_catalog_optimized.jpg',
-    description: 'High-agility tactical kamikaze platform engineered for precision one-way missions. Optimized for low-latency 4K digital video feedback and high maneuverability carrying a 750g tactical payload.',
-    specs: {
-      platform: '7-Inch FPV Digital UAV',
-      transmission: '4K High-Definition Digital Video Feed',
-      payload: '750g Tactical Payload',
-      range: '2 km+ Mission Radius',
-      endurance: 'Up to 25 mins (no load) / 15 mins (full load)'
-    },
-    features: [
-      '4K high-definition digital video feed for enhanced situational awareness',
-      '750g tactical payload capacity for targeted delivery',
-      '2km+ extended operational mission radius',
-      '15 minutes sustained flight time with full 750g load'
-    ]
-  },
-  {
-    id: '7inch-analog',
-    name: '7-Inch Long Range Analog FPV UAV',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '7-Inch Analog FPV Platform',
-    tagline: 'Zero-Latency Analog FPV UAV with Foxeer & Patch Antenna',
-    image: './assets/7inch_analog_catalog_optimized.jpg',
-    description: 'Specialized tactical kamikaze platform designed for rapid deployment and high-agility maneuvers. Optimized for zero-latency feedback via an analog link, Foxeer antenna, and high-gain patch antenna.',
-    specs: {
-      platform: '7-Inch FPV Analog UAV',
-      transmission: 'Low-Latency Analog Video Feed',
-      antenna: 'Foxeer Antenna & High-Gain Patch Antenna',
-      payload: '750g Tactical Payload',
-      range: '2 km+ Mission Radius',
-      endurance: 'Up to 25 mins (no load) / 15 mins (full load)'
-    },
-    features: [
-      'Zero-latency analog video link for screen-based display output',
-      'Foxeer antenna & high-gain patch antenna for RF signal penetration',
-      '750g tactical payload carrying capacity',
-      '15 minutes flight endurance under full payload'
-    ]
-  },
-  {
-    id: '5inch-digital',
-    name: '5-Inch Long Range Digital FPV UAV',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '5-Inch Digital FPV Platform',
-    tagline: 'Compact Tactical Interceptor with Digital DJI Video System',
-    image: './assets/5inch_digital_catalog_optimized.jpg',
-    description: 'Compact, high-velocity tactical interceptor designed for surgical precision in short-range operations. Leverages an integrated Digital DJI Video system for unmatched visual clarity carrying a 300g precision payload.',
-    specs: {
-      platform: '5-Inch FPV Digital UAV',
-      transmission: 'Integrated Digital DJI Video System',
-      payload: '300g Precision Payload',
-      range: '2 km Operational Distance',
-      endurance: 'Sustained Window up to 25 Minutes'
-    },
-    features: [
-      'Integrated Digital DJI Video system for high-fidelity awareness',
-      'Tailored for 300g precision payload delivery',
-      'Compact, unobtrusive profile for restricted environments',
-      '25 minutes operational flight window'
-    ]
-  },
-  {
-    id: '5inch-analog',
-    name: '5-Inch Long Range Analog FPV UAV',
-    sector: 'Defense & Armed Reconnaissance',
-    category: '5-Inch Analog FPV Platform',
-    tagline: 'Ultra-Responsive FPV UAV with Zero-Latency Analog Feed',
-    image: './assets/5inch_analog_catalog_optimized.jpg',
-    description: 'Ultra-responsive, small-form tactical asset engineered for rapid engagement in restricted environments. Prioritizes a high power-to-weight ratio and robust analog interface carrying a 300g payload.',
-    specs: {
-      platform: '5-Inch FPV Analog UAV',
-      transmission: 'Integrated Analog Video System (Zero-Latency)',
-      antenna: 'Foxeer Antenna & High-Gain Patch Antenna',
-      payload: '300g Tactical Payload',
-      range: '2 km Operational Distance',
-      endurance: 'Sustained Window up to 25 Minutes'
-    },
-    features: [
-      'Zero-latency analog video feed for screen-based output',
-      'Foxeer & high-gain patch antenna system',
-      'High-discharge battery system for explosive maneuverability',
-      '25 minutes sustained operational window'
-    ]
-  },
-  {
-    id: 'agron-10l',
-    name: 'AGRON 10L Agriculture Spray Drone',
-    sector: 'Agriculture & Civil Solutions',
-    category: 'Precision Agriculture Sprayer',
-    tagline: 'Efficient Aerial Spraying Solution (96 Acres / Day)',
-    image: './assets/agron_10l_catalog_optimized.jpg',
-    description: 'High-efficiency aerial spraying platform designed for plain field crops. Features 10-liter spray tank, 4-axis sprinklers (up to 5L/min flow), 5km dual-frequency link, and front/back/down terrain-following radar.',
-    specs: {
-      payload: '10 Liters Spray Tank',
-      coverage: '96 Acres / Day (4 Acres / Flight | 12 Acres / Hour)',
-      flowRate: 'Max 5 L/min (4 Sprinklers)',
-      range: '5 km Dual Frequency Transmission',
-      swath: '6 Meters Swath Width (3 Battery Stager Ops)',
-      avoidance: 'Front, Back & Down Terrain-Following Radar'
-    },
-    features: [
-      'Replaces hazardous manual pesticide spraying on field crops',
-      '96 acres per day coverage capacity (4 acres per flight)',
-      'Automated terrain-following radar for uneven fields',
-      '3-battery stager continuous operation setup'
-    ]
-  },
-  {
-    id: 'agron-30l',
-    name: 'AGRON 30L Agriculture Spray Drone',
-    sector: 'Agriculture & Civil Solutions',
-    category: 'Commercial Farm & Orchard Heavy Sprayer',
-    tagline: 'Heavy-Lift Agricultural System (336 Acres / Day)',
-    image: './assets/agron_30l_catalog_optimized.jpg',
-    description: 'Commercial-grade heavy agricultural drone with 30L spray tank and 50L spreading tank. Engineered for large farms and orchards with dual centrifugal sprinklers delivering up to 16L/min.',
-    specs: {
-      payload: '30L Spray Tank | 50L Spreading Tank',
-      coverage: '336 Acres / Day (7 Acres / Flight | 42 Acres / Hour)',
-      flowRate: 'Max 16 L/min (2 Centrifugal Sprinklers)',
-      range: '5 km Dual Frequency Transmission',
-      swath: '6 Meters Swath Width (3 Battery Stager Ops)',
-      avoidance: 'Front, Back & Down Terrain-Following Radar'
-    },
-    features: [
-      'Dual capability: 30L liquid spray & 50L granular spreading tank',
-      'Dual centrifugal atomizing sprinklers for drift control',
-      'High daily coverage of 336 acres per day (7 acres per flight)',
-      '42 acres per hour operational efficiency'
-    ]
-  },
-  {
-    id: 'agron-50l',
-    name: 'AGRON 50L Agriculture Spray Drone',
-    sector: 'Agriculture & Civil Solutions',
-    category: 'Ultra Heavy-Lift Sprayer & Spreader',
-    tagline: 'Ultra Heavy-Lift Agricultural System (336+ Acres / Day)',
-    image: './assets/agron_z50p.jpeg',
-    description: 'Commercial-grade ultra heavy agricultural drone with 50L capacity (spray & granular spreading). Engineered for vast farm acreage with high-velocity atomizing sprinklers delivering up to 16L/min.',
-    specs: {
-      payload: '50L Tank (Liquid Spray & Granular Spreading)',
-      coverage: '336+ Acres / Day (7+ Acres / Flight)',
-      flowRate: 'Max 16 L/min (High-Velocity Atomizers)',
-      range: '5 km Dual Frequency Transmission',
-      avoidance: '360° Omnidirectional Obstacle Avoidance Radar'
-    },
-    features: [
-      'Dual capability: 50L heavy spray & granular fertilizer spreading',
-      'High-velocity atomizing nozzles for drift control',
-      'Ultra high daily coverage for vast commercial acreage',
-      '360° omnidirectional obstacle avoidance radar'
-    ]
-  }
+}
 ];
 
 // Leadership Team Data
@@ -571,10 +655,11 @@ export default function App() {
   });
 
   // Category Filtering
-  const categories = ['All', 'Tactical Strike & Delivery', 'Heavy-Lift & BVLOS', 'ISR & Surveillance', 'FPV Interceptors', 'Precision Agriculture', 'Industry Application'];
+  const categories = ['All', 'Tactical Strike & Delivery', 'Heavy-Lift & BVLOS', 'ISR & Surveillance', 'FPV Interceptors', 'Precision Agriculture', 'DJI Agri', 'Industry Application'];
 
   const filteredProducts = OFFICIAL_SAFSHIKAN_PRODUCTS.filter(product => {
     if (activeCategory === 'All') return true;
+    if (activeCategory === 'DJI Agri') return product.sector === 'DJI Agri';
     if (activeCategory === 'Industry Application') return product.sector === 'Industry Application';
     if (activeCategory === 'Tactical Strike & Delivery') return product.id.includes('grim') || product.id.includes('sovraan-1') || product.id.includes('sovraan-2');
     if (activeCategory === 'Heavy-Lift & BVLOS') return product.id.includes('bvlos');
