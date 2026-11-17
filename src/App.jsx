@@ -421,13 +421,42 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "Building Cleaning Drone",
   "sector": "Industry Application",
   "category": "Building & Facade Cleaning",
-  "tagline": "Building & Facade Cleaning",
+  "tagline": "Configurable Tethered Facade & Exterior Cleaning",
   "image": "/assets/building-cleaning-scene.jpg",
-  "description": "Aerial cleaning for glass facades and building exteriors, helping teams reach elevated surfaces with directed water spray.",
-  "specs": {},
+  "description": "Custom-configurable aerial cleaning platform for glass facades, exterior cladding, industrial roofs and other hard-to-access surfaces. A ground-fed hose and directional spray assembly can support operator-supervised washing without lifting a full water tank; camera, spray-lance and power options are selected for each project.",
+  "specs": {
+    "applications": "Glass facades, building exteriors, cladding and industrial surfaces",
+    "cleaningSystem": "Ground-fed washing via hose and directional spray lance (configurable)",
+    "waterSupply": "Ground pump, filter, water line and nozzle; project-selected",
+    "sprayControl": "Adjustable nozzle or lance; cleaning pressure depends on surface and site",
+    "powerOptions": "Battery or externally powered tether configuration, if engineered",
+    "inspection": "Optional FPV or stabilized camera for operator positioning",
+    "safetyControls": "Hose management, safe standoff, wind checks and exclusion zones",
+    "workingHeight": "Site-specific; determined by tether, hose and flight-risk assessment",
+    "configuration": "Built to order; final equipment and performance require confirmation"
+  },
+  "cardHighlights": [
+    {
+      "label": "Cleaning",
+      "value": "Facades / Glass / Roofs"
+    },
+    {
+      "label": "Water Feed",
+      "value": "Ground-Fed Hose"
+    },
+    {
+      "label": "Equipment",
+      "value": "Pump + Spray Lance"
+    }
+  ],
   "features": [
-    "Building & Facade Cleaning",
-    "Contact our team for configuration and technical specifications."
+    "Directed spray-lance and nozzle options for building exteriors and facade panels",
+    "Ground-based pump and water supply help reduce carried liquid mass",
+    "Tether and hose routing planned around each building geometry and work area",
+    "Optional inspection camera for accurate operator-guided positioning",
+    "Configurable power and cleaning-pressure setup for task requirements",
+    "Site-specific procedures for wind, pedestrian exclusion and overspray containment",
+    "Cleaning accessories and technical limits confirmed during engineering review"
   ]
 },
 {
@@ -435,13 +464,42 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "Fire Extinguisher Drone",
   "sector": "Industry Application",
   "category": "Fire Response Support",
-  "tagline": "Fire Response Support",
+  "tagline": "Aerial Fire-Response & Elevated Access Support",
   "image": "/assets/fire-extinguisher-scene.jpg",
-  "description": "Aerial firefighting support with directed spray to help response teams reach elevated or difficult-to-access fire locations.",
-  "specs": {},
+  "description": "Custom aerial response-support concept for elevated exterior hot spots and locations difficult to reach from the ground. Water or an appropriate extinguishing medium can be considered through a hose-fed or carried module, with optional live video and thermal observation. Deployment must be coordinated with trained fire responders and validated for the specific hazard.",
+  "specs": {
+    "operationalRole": "Aerial support for trained fire-response teams",
+    "targetApplications": "Elevated exterior hot spots, industrial exteriors and access-limited areas",
+    "agentOptions": "Water or site-approved agent, selected for the specific fire class",
+    "deliveryEquipment": "Tethered line or onboard module; engineered per application",
+    "observation": "Optional RGB / thermal camera, live video and searchlight",
+    "pilotControl": "Remote-pilot supervision and agreed site command procedures",
+    "riskControls": "Heat exposure, rotor downwash, wind, stand-off and exclusion zones",
+    "compliance": "Fire authority coordination and required operational approvals",
+    "configuration": "Custom engineered; suppression performance not pre-certified"
+  },
+  "cardHighlights": [
+    {
+      "label": "Mission",
+      "value": "Elevated Fire Support"
+    },
+    {
+      "label": "Agent",
+      "value": "Water / Approved Media"
+    },
+    {
+      "label": "Options",
+      "value": "Thermal + Live Video"
+    }
+  ],
   "features": [
-    "Fire Response Support",
-    "Contact our team for configuration and technical specifications."
+    "Aerial access planning for elevated exterior response areas",
+    "Configurable hose-fed or onboard extinguishing-media delivery concept",
+    "Optional thermal and visual monitoring for situation awareness",
+    "Remote-pilot control coordinated with incident command on the ground",
+    "Stand-off, heat and rotor-downwash risks reviewed before deployment",
+    "Agent selection and pressure settings matched to the actual fire hazard",
+    "A response-support tool, not a substitute for certified firefighting equipment"
   ]
 },
 {
@@ -449,13 +507,42 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "Heavy Lifting Drone",
   "sector": "Industry Application",
   "category": "Cargo & Site Logistics",
-  "tagline": "Cargo & Site Logistics",
+  "tagline": "Configurable Aerial Cargo Transport & Site Logistics",
   "image": "/assets/heavy-lifting-scene.jpg",
-  "description": "Aerial lifting and transport of cargo for work sites and remote locations, supporting logistics across challenging terrain.",
-  "specs": {},
+  "description": "Custom heavy-lift UAV concept for transporting tools, critical supplies and cargo across worksites or difficult terrain. Depending on the mission, the platform can be engineered around a load-rated cargo hook, sling or enclosed carrier, with operator-supervised flight planning, load monitoring and safe landing or handover procedures.",
+  "specs": {
+    "applications": "Construction sites, industrial logistics and remote-area supply",
+    "cargoCapacity": "Sized for the selected airframe, battery, route and flight conditions",
+    "cargoInterface": "Engineered cargo hook, rated sling or dedicated carrier",
+    "flightOperations": "Remote-pilot supervision; mission planning subject to local rules",
+    "payloadMonitoring": "Load feedback and flight telemetry where configured",
+    "handling": "Planned landing or controlled handover; no uncontrolled cargo release",
+    "safetyControls": "Load security, centre-of-gravity checks and exclusion zones",
+    "flightDuration": "Determined by tested payload, wind, temperature and route",
+    "configuration": "Built to order; lifting rating confirmed after engineering validation"
+  },
+  "cardHighlights": [
+    {
+      "label": "Payload",
+      "value": "Mission-Sized Build"
+    },
+    {
+      "label": "Cargo Gear",
+      "value": "Hook / Sling / Carrier"
+    },
+    {
+      "label": "Use",
+      "value": "Site & Remote Logistics"
+    }
+  ],
   "features": [
-    "Cargo & Site Logistics",
-    "Contact our team for configuration and technical specifications."
+    "Mission-specific airframe and propulsion selection for industrial cargo handling",
+    "Load-rated hook, sling or carrier chosen to suit cargo dimensions",
+    "Pre-flight weight, centre-of-gravity and rigging safety checks",
+    "Optional cargo/load monitoring and remote telemetry",
+    "Operator-supervised routing for construction sites and inaccessible areas",
+    "Defined delivery, landing and secure handover procedures",
+    "Final payload, range and endurance established through configuration testing"
   ]
 },
 {
@@ -463,13 +550,42 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "Water Rescue Drone",
   "sector": "Industry Application",
   "category": "Lifebuoy Rescue",
-  "tagline": "Lifebuoy Rescue",
+  "tagline": "Rapid Flotation Aid Delivery & Search Support",
   "image": "/assets/water-rescue-scene.jpg",
-  "description": "A flying lifebuoy platform for delivering flotation assistance over water and supporting shoreline and boat-based rescue teams.",
-  "specs": {},
+  "description": "Rescue-support UAV concept designed to carry a suitable lifebuoy or flotation aid toward a person in distress on rivers, reservoirs, coastal waters or flood zones. A remotely controlled release mechanism can deliver buoyancy equipment while an optional camera, searchlight or loudspeaker assists the trained rescue team with visibility and communication.",
+  "specs": {
+    "applications": "Rivers, reservoirs, coastal areas and flood-response support",
+    "rescuePayload": "Approved lifebuoy or flotation aid sized to the airframe",
+    "deployment": "Pilot-controlled flotation-aid release after visual assessment",
+    "observation": "Optional live camera, searchlight and public-address equipment",
+    "navigation": "Pilot-guided positioning; assisted flight features if configured",
+    "environment": "Wind, rain, salt exposure and water proximity assessed per mission",
+    "safetyControls": "Rescue-team coordination, safe release height and bystander separation",
+    "flightDuration": "Depends on flotation payload, battery and conditions",
+    "configuration": "Custom engineered; final rescue equipment and ratings to be verified"
+  },
+  "cardHighlights": [
+    {
+      "label": "Rescue Aid",
+      "value": "Lifebuoy / Flotation"
+    },
+    {
+      "label": "Delivery",
+      "value": "Remote-Control Release"
+    },
+    {
+      "label": "Options",
+      "value": "Camera + Searchlight"
+    }
+  ],
   "features": [
-    "Lifebuoy Rescue",
-    "Contact our team for configuration and technical specifications."
+    "Rapid flotation-aid transport to difficult-to-reach water locations",
+    "Remote-controlled release concept for an approved lifebuoy or rescue float",
+    "Optional live-view camera for search and position awareness",
+    "Optional searchlight and loudspeaker for low-visibility coordination",
+    "Water-adjacent flight risk assessment for wind and environmental exposure",
+    "Operated in coordination with trained lifeguard and emergency responders",
+    "A support platform; not a replacement for on-water rescue personnel"
   ]
 }
 ];
@@ -1523,7 +1639,7 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="text-xs font-mono uppercase text-slate-400 mb-2 font-semibold">Technical Specifications</h4>
+              <h4 className="text-xs font-mono uppercase text-slate-400 mb-2 font-semibold">{selectedDrone.sector === 'Industry Application' ? 'Configuration & Equipment Options' : 'Technical Specifications'}</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
                 {Object.entries(selectedDrone.specs).map(([key, val], idx) => (
                   <div key={idx} className="p-3 bg-slate-900 border border-slate-800 rounded-lg">
@@ -1532,6 +1648,11 @@ export default function App() {
                   </div>
                 ))}
               </div>
+              {selectedDrone.sector === 'Industry Application' && (
+                <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
+                  Custom-built platform: listed equipment describes configurable design options, not a certified standard model. Final specifications, availability and operational limits require project assessment and validation.
+                </p>
+              )}
               {selectedDrone.officialSpecsUrl && (
                 <a href={selectedDrone.officialSpecsUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs text-blue-400 hover:text-blue-300 underline underline-offset-4">
                   Verify on DJI Official Specifications ↗
@@ -1540,7 +1661,7 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="text-xs font-mono uppercase text-slate-400 mb-2 font-semibold">{selectedDrone.sector === "DJI Agri" ? "Equipment & Key Features" : "Tactical Features"}</h4>
+              <h4 className="text-xs font-mono uppercase text-slate-400 mb-2 font-semibold">{selectedDrone.sector === 'DJI Agri' || selectedDrone.sector === 'Industry Application' ? 'Equipment & Key Features' : 'Tactical Features'}</h4>
               <div className="space-y-1.5 text-xs text-slate-300">
                 {selectedDrone.features.map((feat, idx) => (
                   <div key={idx} className="flex items-center gap-2">
