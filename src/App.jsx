@@ -299,35 +299,7 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
       'Ultra high daily coverage for vast commercial acreage',
       '360° omnidirectional obstacle avoidance radar'
     ]
-  },
-{
-  "id": "dji-agras-t20",
-  "name": "DJI Agras T20",
-  "sector": "DJI Agri",
-  "category": "DJI Agri",
-  "tagline": "Precision Agriculture",
-  "image": "/assets/dji-agras-t20.png",
-  "description": "Agricultural spraying drone for crop-care operations, with a foldable airframe and an eight-nozzle spraying system.",
-  "specs": {},
-  "features": [
-    "Agricultural crop-care platform",
-    "Contact our team for configuration and technical specifications."
-  ]
-},
-{
-  "id": "dji-agras-t30",
-  "name": "DJI Agras T30",
-  "sector": "DJI Agri",
-  "category": "DJI Agri",
-  "tagline": "Precision Agriculture",
-  "image": "/assets/dji-agras-t30.png",
-  "description": "Agricultural drone with a 30-litre spraying tank and adjustable arms for field and orchard applications.",
-  "specs": {},
-  "features": [
-    "Agricultural crop-care platform",
-    "Contact our team for configuration and technical specifications."
-  ]
-},
+  },    
 {
   "id": "dji-agras-t50",
   "name": "DJI Agras T50",
@@ -336,20 +308,6 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "tagline": "Precision Agriculture",
   "image": "/assets/dji-agras-t50.png",
   "description": "Agricultural platform for spraying and spreading, with coaxial twin-rotor propulsion, dual atomizing sprinklers and obstacle-sensing systems.",
-  "specs": {},
-  "features": [
-    "Agricultural crop-care platform",
-    "Contact our team for configuration and technical specifications."
-  ]
-},
-{
-  "id": "dji-agras-t70",
-  "name": "DJI Agras T70",
-  "sector": "DJI Agri",
-  "category": "DJI Agri",
-  "tagline": "Precision Agriculture",
-  "image": "/assets/dji-agras-t70.png",
-  "description": "Agricultural drone for crop spraying and granular spreading. Contact our team to confirm the regional configuration and available equipment.",
   "specs": {},
   "features": [
     "Agricultural crop-care platform",
