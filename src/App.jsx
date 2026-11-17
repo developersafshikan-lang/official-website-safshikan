@@ -305,13 +305,37 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "DJI Agras T50",
   "sector": "DJI Agri",
   "category": "DJI Agri",
-  "tagline": "Precision Agriculture",
+  "tagline": "40 L Precision Spraying & 75 L Granular Spreading",
   "image": "/assets/dji-agras-t50.png",
-  "description": "Agricultural platform for spraying and spreading, with coaxial twin-rotor propulsion, dual atomizing sprinklers and obstacle-sensing systems.",
-  "specs": {},
+  "description": "Professional agricultural drone with a 40 L spraying tank, 75 L granular spreader and coaxial twin-rotor propulsion. Dual atomizing sprinklers, magnetic-drive pumps, front/rear phased-array radar and binocular vision support precision field and orchard operations.",
+  "specs": {
+    "payload": "40 kg spraying / 50 kg spreading",
+    "sprayTank": "40 L (40 kg operating payload)",
+    "spreadingTank": "75 L (up to 50 kg granules)",
+    "sprayFlow": "16 L/min standard; 24 L/min with optional 4-sprinkler kit",
+    "spreadRate": "Up to 108 kg/min",
+    "sprayWidth": "4-11 m effective spray width",
+    "dropletSize": "50-500 micrometers (adjustable)",
+    "sprayEquipment": "2 centrifugal atomizing sprinklers; magnetic-drive dual pumps",
+    "safetySensors": "Front/rear phased-array radar + binocular vision",
+    "positioning": "RTK hover accuracy: +/-10 cm (specified conditions)",
+    "flightRadius": "2 km max configurable flight radius",
+    "powerEquipment": "DB1560 30,000 mAh battery; compatible D12000iE / C10000 charging systems"
+  },
+  "cardHighlights": [
+    { "label": "Spray Tank", "value": "40 L" },
+    { "label": "Spreading", "value": "75 L / 50 kg" },
+    { "label": "Spray Flow", "value": "16 L/min (24 optional)" }
+  ],
+  "officialSpecsUrl": "https://ag.dji.com/t50/specs",
   "features": [
-    "Agricultural crop-care platform",
-    "Contact our team for configuration and technical specifications."
+    "40 L liquid spraying and 75 L (50 kg) granular spreading configurations",
+    "Dual atomizing centrifugal sprinklers with magnetic-drive impeller pumps",
+    "Optional four-sprinkler kit raises maximum flow from 16 to 24 L/min",
+    "Front and rear phased-array radars plus binocular vision for obstacle sensing",
+    "Coaxial twin-rotor system, RTK positioning and terrain-following capabilities",
+    "Variable-rate spraying, orchard operation modes and real-time spreader weighing",
+    "DB1560 Intelligent Flight Battery and compatible charging equipment (configuration dependent)"
   ]
 },
 {
@@ -319,13 +343,38 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "DJI Agras T70P",
   "sector": "DJI Agri",
   "category": "DJI Agri",
-  "tagline": "Precision Agriculture",
+  "tagline": "70 L High-Output Spraying, Spreading & Lifting",
   "image": "/assets/dji-agras-t70p.png",
-  "description": "Agricultural drone for crop spraying and granular spreading. Contact our team to confirm the regional configuration and available equipment.",
-  "specs": {},
+  "description": "High-capacity agricultural platform with a 70 L spraying tank, 100 L Spreading System 4.0 and optional 65 kg lifting capability. Dual centrifugal atomizers, magnetic-drive pumps and Safety System 3.0 with radar and tri-vision sensing support efficient farm operations.",
+  "specs": {
+    "payload": "70 kg maximum spraying load; 65 kg lifting (lifting system)",
+    "sprayTank": "70 L (70 kg operating payload)",
+    "spreadingTank": "100 L (up to 70 kg granules)",
+    "sprayFlow": "30 L/min standard; 40 L/min with optional 4 sprinklers",
+    "spreadRate": "Up to 400 kg/min (compound fertilizer)",
+    "sprayWidth": "4-11 m effective spray width",
+    "spreadingWidth": "3-10 m effective spreading width",
+    "dropletSize": "50-500 micrometers",
+    "sprayEquipment": "2 centrifugal sprinklers standard; optional mist and 4-sprinkler sets",
+    "safetySensors": "Safety System 3.0: millimeter-wave radar + tri-vision",
+    "lifting": "65 kg rated capacity with lifting system",
+    "flightRadius": "2 km max configurable flight radius",
+    "powerEquipment": "DB1580 / DB2160 flight batteries; compatible D14000iE / C12000 charger"
+  },
+  "cardHighlights": [
+    { "label": "Spray Tank", "value": "70 L" },
+    { "label": "Spreading", "value": "100 L / 70 kg" },
+    { "label": "Spray Flow", "value": "30 L/min (40 optional)" }
+  ],
+  "officialSpecsUrl": "https://ag.dji.com/t70p/specs",
   "features": [
-    "Agricultural crop-care platform",
-    "Contact our team for configuration and technical specifications."
+    "70 L spraying tank and dual magnetic-drive impeller pumps",
+    "Two centrifugal sprinklers standard; optional four-sprinkler and water-cooled mist configurations",
+    "Spreading System 4.0 with 100 L hopper, centrifugal disc and feeder choices",
+    "Safety System 3.0 combines millimeter-wave radar and tri-vision obstacle sensing",
+    "Optional lifting system rated for loads up to 65 kg",
+    "TKPL 2 remote controller with 7-inch high-brightness touchscreen",
+    "Compatible DB1580 / DB2160 batteries and fast-charging equipment (configuration dependent)"
   ]
 },
 {
@@ -333,13 +382,38 @@ const OFFICIAL_SAFSHIKAN_PRODUCTS = [
   "name": "DJI Agras T100",
   "sector": "DJI Agri",
   "category": "DJI Agri",
-  "tagline": "Precision Agriculture",
+  "tagline": "100 L Heavy-Duty Spraying, 150 L Spreading & Lifting",
   "image": "/assets/dji-agras-t100.png",
-  "description": "Heavy-duty agricultural platform supporting spraying, spreading and lifting, designed for large-scale farm operations.",
-  "specs": {},
+  "description": "Heavy-duty agricultural drone supporting 100 L liquid spraying, 150 L Spreading System 4.0 and up to 100 kg lifting with the appropriate configuration. Its dual centrifugal sprinklers, magnetic-drive pumps and Safety System 3.0 combine precision application with LiDAR, vision and radar sensing.",
+  "specs": {
+    "payload": "100 kg spraying / 100 kg spreading; up to 100 kg lifting",
+    "sprayTank": "100 L (100 kg operating payload; standard system)",
+    "spreadingTank": "150 L (up to 100 kg granules)",
+    "sprayFlow": "30 L/min standard; 40 L/min with optional 4 nozzles",
+    "spreadRate": "Up to 400 kg/min (compound fertilizer)",
+    "sprayWidth": "5-13 m effective spray width",
+    "spreadingWidth": "3-10 m effective spreading width",
+    "dropletSize": "50-500 micrometers",
+    "sprayEquipment": "LS100 system; 2 centrifugal nozzles standard, 4 optional; magnetic-drive pumps",
+    "safetySensors": "Safety System 3.0: LiDAR + multiple vision sensors + millimeter-wave radar",
+    "lifting": "100 kg lifting system; 80 kg with dual-battery lifting configuration",
+    "flightRadius": "2 km max configurable flight radius",
+    "powerEquipment": "DB2160 / DB2212 batteries; compatible C12000 / D14000iE charging equipment"
+  },
+  "cardHighlights": [
+    { "label": "Spray Tank", "value": "100 L" },
+    { "label": "Spreading", "value": "150 L / 100 kg" },
+    { "label": "Spray Flow", "value": "30 L/min (40 optional)" }
+  ],
+  "officialSpecsUrl": "https://ag.dji.com/t100/specs",
   "features": [
-    "Agricultural crop-care platform",
-    "Contact our team for configuration and technical specifications."
+    "100 L LS100 spraying system with dual centrifugal atomizers and magnetic-drive pumps",
+    "Optional four-nozzle configuration raises spray output from 30 to 40 L/min",
+    "Spreading System 4.0: 150 L hopper, centrifugal disc and screw-feeder delivery",
+    "Safety System 3.0 incorporates LiDAR, millimeter-wave radar and multi-vision sensing",
+    "Optional lifting kit supports up to 100 kg; dual-battery lifting configuration up to 80 kg",
+    "TKPL 2 remote controller with 7-inch high-brightness touchscreen",
+    "DB2160 / DB2212 flight batteries and compatible charging equipment (configuration dependent)"
   ]
 },
 {
@@ -722,6 +796,15 @@ export default function App() {
 
                     {/* Specs Highlights */}
                     <div className="fleet-specs pt-3 border-t border-slate-800/80 space-y-1.5 font-mono text-xs">
+                      {product.cardHighlights ? (
+                        product.cardHighlights.map(({ label, value }) => (
+                          <div key={label} className="flex justify-between gap-3 text-slate-400">
+                            <span className="shrink-0">{label}:</span>
+                            <span className="text-slate-200 font-semibold text-right">{value}</span>
+                          </div>
+                        ))
+                      ) : (
+                        <>
                       {product.specs.payload && (
                         <div className="flex justify-between text-slate-400">
                           <span>Payload:</span>
@@ -739,6 +822,8 @@ export default function App() {
                           <span>Endurance:</span>
                           <span className="text-slate-200 font-semibold">{product.specs.endurance}</span>
                         </div>
+                      )}
+                        </>
                       )}
                     </div>
 
@@ -1447,10 +1532,15 @@ export default function App() {
                   </div>
                 ))}
               </div>
+              {selectedDrone.officialSpecsUrl && (
+                <a href={selectedDrone.officialSpecsUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs text-blue-400 hover:text-blue-300 underline underline-offset-4">
+                  Verify on DJI Official Specifications ↗
+                </a>
+              )}
             </div>
 
             <div>
-              <h4 className="text-xs font-mono uppercase text-slate-400 mb-2 font-semibold">Tactical Features</h4>
+              <h4 className="text-xs font-mono uppercase text-slate-400 mb-2 font-semibold">{selectedDrone.sector === "DJI Agri" ? "Equipment & Key Features" : "Tactical Features"}</h4>
               <div className="space-y-1.5 text-xs text-slate-300">
                 {selectedDrone.features.map((feat, idx) => (
                   <div key={idx} className="flex items-center gap-2">
